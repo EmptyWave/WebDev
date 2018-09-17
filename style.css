@@ -150,17 +150,6 @@ body {
     padding-top: 100px;
 }
 
-.item-container {
-    display: block;
-    width: 263px;
-    height: 376px;
-}
-
-.item-container:hover {
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
-        transition: all 300ms ease;
-}
-
 
 .items-list {
     display: flex;
@@ -297,18 +286,29 @@ body {
     flex-flow: column wrap;
 }
 
+.item-container {
+    display: block;
+    width: 263px;
+    height: 376px;
+}
+
 .add-hide {
     opacity: 0;
     height: 100%;
     width: 100%;
 }
 
-.add-hide:hover {
+.item-hide-container:hover {
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
+    transition: all 300ms ease;
+}
+.item-hide-container:hover .add-hide{
     opacity: 0.7;
+    height: 100%;
+    width: 100%;
     position: absolute;
     background-color: #000;
     transition: all 300ms ease;
-
 }
 
 .add-to-card {
@@ -342,10 +342,12 @@ body {
 }
 
 .info-banner-block {
-    height: 33%;
+    display: flex;
+    height: 30%;
 }
 
 .info-banner-text1 {
+    padding-top: 10px;
     color: #fbfbfb;
     font-size: 14px;
     font-weight: 300;
@@ -353,7 +355,7 @@ body {
 }
 
 .info-banner-text-h {
-    
+
     color: #fbfbfb;
     font-size: 20px;
     font-weight: 700;
@@ -374,9 +376,50 @@ body {
 }
 
 .info-banner-text {
-    float:left; 
+    float: left;
     margin-top: 146px;
     padding-left: 39px;
     width: 50%;
 }
 
+
+
+.info-banner-block-icon {
+    padding: 48px 35px;
+}
+
+.info-banner-block-text {
+    padding-top: 48px;
+    width: 219px;
+}
+
+.subscribe {
+    padding-top: 97px;
+    height: 438px;
+}
+
+.subscribe-img {
+    opacity: 0.5;
+    background: url(img/subscribe_back.jpg);
+}
+
+.review-box {
+    opacity: inherit;
+    display: flex;
+    height: 40%;
+    width: 500px;
+}
+
+.subscribe-box {
+    padding-top: 148px;
+    height: 30%;
+    width: 390px;
+}
+
+.subscribe-container {
+    display: inline-flex;
+}
+
+.review-box-text {
+    padding-left: 28px;
+}
