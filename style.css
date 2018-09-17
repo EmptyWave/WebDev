@@ -394,17 +394,16 @@ body {
 }
 
 .subscribe {
-    padding-top: 97px;
     height: 438px;
 }
 
 .subscribe-img {
     opacity: 0.5;
-    background: url(img/subscribe_back.jpg);
+    background: url(img/subscribe_back.jpg) round;
 }
 
 .review-box {
-    opacity: inherit;
+    padding-top: 120px;
     display: flex;
     height: 40%;
     width: 500px;
@@ -423,3 +422,42 @@ body {
 .review-box-text {
     padding-left: 28px;
 }
+
+.review-box-text-rev {
+    color: #222224;
+font-size: 16px;
+font-style: italic;
+line-height: 26px;
+}
+
+.review-box-text-name {
+    padding-top: 15px;
+    color: #f16d7f;
+font-size: 16px;
+font-weight: 700;
+}
+
+.review-box-text-dis {
+    color: #222224;
+font-size: 12px;
+font-weight: 300;
+}
+
+.rev-lines {
+    display: inline-flex;
+    padding-top: 20px;
+    height: 10%;        
+}
+
+.rev-border-pink {
+    width: 38px;
+    border-bottom: 4px solid #f16d7f;
+    margin: 0 13px;
+}
+
+.rev-border {
+    width: 38px;
+    border-bottom: 4px solid #d6d6d6;
+}
+
+
