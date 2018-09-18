@@ -38,12 +38,17 @@ body {
 .header-form {
     display: flex;
     margin-left: 37px;
+    height: 39px;
 }
 
 .logo {
     align-items: center;
     display: flex;
     text-decoration: none;
+        color: #3e3e40;
+font-size: 27px;
+font-weight: 300;
+text-transform: uppercase;
 }
 
 .button-site {
@@ -313,6 +318,7 @@ body {
 
 .add-to-card {
     opacity: 1;
+    display: inline-flex;
     position: absolute;
     top: 98px;
     left: 70px;
@@ -398,8 +404,11 @@ body {
 }
 
 .subscribe-img {
-    opacity: 0.5;
-    background: url(img/subscribe_back.jpg) round;
+        width: 100%;
+    height: 438px;
+    opacity: 0.6;
+    background-color: #e1e1e1;
+    position: absolute;
 }
 
 .review-box {
@@ -411,11 +420,13 @@ body {
 
 .subscribe-box {
     padding-top: 148px;
+    padding-left: 165px;
     height: 30%;
     width: 390px;
 }
 
 .subscribe-container {
+    position: absolute;
     display: inline-flex;
 }
 
@@ -461,3 +472,192 @@ font-weight: 300;
 }
 
 
+
+.subscribe-img-blur {
+    height: 438px;
+    width: 100%;
+        opacity: 0.3;
+    position: absolute;
+    background: black;
+}
+
+.add-to-card-text {
+    padding: 3px 0 0 8px;
+}
+
+.subscribe-text-h {
+    color: #222224;
+    font-weight: 400;
+    font-size: 24px;
+text-transform: uppercase;
+}
+
+.subscribe-text {
+        color: #222224;
+    font-weight: 400;
+    font-size: 14px;
+text-transform: uppercase;
+}
+
+.subscribe-text-box {
+    text-align: center;
+}
+
+.subscribe-input-text {
+    width: 266px;
+    height: 100%;
+    border: 0;
+    border-radius: 23px 0 0 23px;
+    background-color: #e1e1e1;
+    padding-left: 28px;
+    
+    opacity: 0.67;
+    color: #222224;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.subscribe-button {
+    position: absolute;
+    border: 0;
+    height: 46px;
+    width: 97px;
+    border-radius: 0 23px 23px 0;
+    background-color: #f16d7f;
+    
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+
+.subscribe-form-box {
+    padding-top: 35px;
+    height: 46px;
+    width: 386px;
+    display: inline-block;
+}
+
+.footer-menu__link {
+    text-decoration: none;
+    padding: 28px 25px;
+    color: #898989;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 59px;
+    text-transform: uppercase;
+}
+
+.footer-main {
+    display: inline-flex;
+}
+
+.footer{
+    padding-top: 109px;
+}
+
+.footer-brand {
+    width: 35%;
+}
+
+.footer-company {
+    padding-left: 64px;
+    width: 20%;
+}
+
+.footer-info {
+    width: 20%;
+}
+
+.footer-shop-category {
+    padding-left: 15px;
+    width: 20%;
+}
+
+.footer-text {
+    color: #898989;
+font-size: 14px;
+font-weight: 300;
+line-height: 24px;
+    padding-top: 41px;
+}
+
+.footer-menu-h {
+    padding-left: 24px;
+    color: #f16d7f;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.footer-menu {
+    margin-top: 15px;
+    list-style-type: none;
+}
+
+.footer-logo {
+        align-items: center;
+    display: flex;
+    text-decoration: none;
+    color: #3e3e40;
+font-size: 27px;
+font-weight: 300;
+text-transform: uppercase;
+}
+
+.footer-pink-span {
+    color: #f16d7f;
+    font-weight: 700;
+}
+
+.header-pink-span {
+        color: #f16d7f;
+    font-weight: 700;
+}
+
+.header-combo-buttton {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px 0 0 3px;
+    background-color: #cdcdcc;
+    width: 87px;
+    
+    color: #222222;
+font-size: 14px;
+font-weight: 300;
+}
+
+.header-search-text {
+    width: 280px;
+    padding: 14px 16px;
+    border: 1px solid #e6e6e6;
+    background-color: #ffffff;
+    
+    color: #a4a4a4;
+font-size: 14px;
+font-weight: 300;
+}
+
+.header-search-button {
+    border: 1px solid #e6e6e6;
+    border-radius: 0 3px 3px 0;
+    background-color: #ffffff;
+    width: 36px;
+}
+
+.footer-bottom {
+    margin-top: 89px;
+    background-color: #e6e6e6;
+}
+
+.copytight-text {
+    padding: 33px 0 33px;
+    color: #7a7a7a;
+font-size: 16px;
+font-weight: 400;
+}
+
+.copyright {
+    
+}
