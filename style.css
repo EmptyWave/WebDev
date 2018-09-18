@@ -45,10 +45,10 @@ body {
     align-items: center;
     display: flex;
     text-decoration: none;
-        color: #3e3e40;
-font-size: 27px;
-font-weight: 300;
-text-transform: uppercase;
+    color: #3e3e40;
+    font-size: 27px;
+    font-weight: 300;
+    text-transform: uppercase;
 }
 
 .button-site {
@@ -83,6 +83,11 @@ text-transform: uppercase;
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
+}
+
+.menu__link:hover {
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
+    transition: all 300ms ease;
 }
 
 .banner {
@@ -307,7 +312,8 @@ text-transform: uppercase;
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
     transition: all 300ms ease;
 }
-.item-hide-container:hover .add-hide{
+
+.item-hide-container:hover .add-hide {
     opacity: 0.7;
     height: 100%;
     width: 100%;
@@ -404,7 +410,7 @@ text-transform: uppercase;
 }
 
 .subscribe-img {
-        width: 100%;
+    width: 100%;
     height: 438px;
     opacity: 0.6;
     background-color: #e1e1e1;
@@ -436,28 +442,28 @@ text-transform: uppercase;
 
 .review-box-text-rev {
     color: #222224;
-font-size: 16px;
-font-style: italic;
-line-height: 26px;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 26px;
 }
 
 .review-box-text-name {
     padding-top: 15px;
     color: #f16d7f;
-font-size: 16px;
-font-weight: 700;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .review-box-text-dis {
     color: #222224;
-font-size: 12px;
-font-weight: 300;
+    font-size: 12px;
+    font-weight: 300;
 }
 
 .rev-lines {
     display: inline-flex;
     padding-top: 20px;
-    height: 10%;        
+    height: 10%;
 }
 
 .rev-border-pink {
@@ -476,7 +482,7 @@ font-weight: 300;
 .subscribe-img-blur {
     height: 438px;
     width: 100%;
-        opacity: 0.3;
+    opacity: 0.3;
     position: absolute;
     background: black;
 }
@@ -489,14 +495,14 @@ font-weight: 300;
     color: #222224;
     font-weight: 400;
     font-size: 24px;
-text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .subscribe-text {
-        color: #222224;
+    color: #222224;
     font-weight: 400;
     font-size: 14px;
-text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .subscribe-text-box {
@@ -510,7 +516,7 @@ text-transform: uppercase;
     border-radius: 23px 0 0 23px;
     background-color: #e1e1e1;
     padding-left: 28px;
-    
+
     opacity: 0.67;
     color: #222224;
     font-size: 14px;
@@ -524,7 +530,7 @@ text-transform: uppercase;
     width: 97px;
     border-radius: 0 23px 23px 0;
     background-color: #f16d7f;
-    
+
     color: #ffffff;
     font-size: 14px;
     font-weight: 400;
@@ -553,7 +559,7 @@ text-transform: uppercase;
     display: inline-flex;
 }
 
-.footer{
+.footer {
     padding-top: 109px;
 }
 
@@ -577,9 +583,9 @@ text-transform: uppercase;
 
 .footer-text {
     color: #898989;
-font-size: 14px;
-font-weight: 300;
-line-height: 24px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
     padding-top: 41px;
 }
 
@@ -598,13 +604,13 @@ line-height: 24px;
 }
 
 .footer-logo {
-        align-items: center;
+    align-items: center;
     display: flex;
     text-decoration: none;
     color: #3e3e40;
-font-size: 27px;
-font-weight: 300;
-text-transform: uppercase;
+    font-size: 27px;
+    font-weight: 300;
+    text-transform: uppercase;
 }
 
 .footer-pink-span {
@@ -613,7 +619,7 @@ text-transform: uppercase;
 }
 
 .header-pink-span {
-        color: #f16d7f;
+    color: #f16d7f;
     font-weight: 700;
 }
 
@@ -622,10 +628,10 @@ text-transform: uppercase;
     border-radius: 3px 0 0 3px;
     background-color: #cdcdcc;
     width: 87px;
-    
+
     color: #222222;
-font-size: 14px;
-font-weight: 300;
+    font-size: 14px;
+    font-weight: 300;
 }
 
 .header-search-text {
@@ -633,10 +639,10 @@ font-weight: 300;
     padding: 14px 16px;
     border: 1px solid #e6e6e6;
     background-color: #ffffff;
-    
+
     color: #a4a4a4;
-font-size: 14px;
-font-weight: 300;
+    font-size: 14px;
+    font-weight: 300;
 }
 
 .header-search-button {
@@ -654,10 +660,8 @@ font-weight: 300;
 .copytight-text {
     padding: 33px 0 33px;
     color: #7a7a7a;
-font-size: 16px;
-font-weight: 400;
+    font-size: 16px;
+    font-weight: 400;
 }
 
-.copyright {
-    
-}
+.copyright {}
