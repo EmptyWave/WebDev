@@ -794,3 +794,31 @@ details[open] > summary::after {
 .filter-form-text {
     padding-bottom: 25px;
 }
+
+.category-path {
+    height: 148px;
+    background-color: #f8f3f4;
+}
+
+.category-path-form {
+    pad
+}
+
+.category-path-left { 
+    width: auto;
+}
+
+.category-path-right {
+   display: block;
+    width: auto;
+    margin-left: 770px; /* офигетельно временное решение */
+}
+
+.category-path-container {
+     padding-top: 65px;
+    display: inline-flex;
+}
+
+.items {
+    margin-top: 59px;
+}
