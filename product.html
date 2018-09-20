@@ -46,11 +46,11 @@
            </div>
             <div class="category-path-right">
                 <form action="#" class="category-path-form">
-                    <input type="radio" name="category-path-form" id="path1" checked>
-                    <label for="path1">HOME</label> <span>/</span>
-                    <input type="radio" name="category-path-form" id="path2">
-                    <label for="path2">MEN</label> <span>/</span>   
-                    <input type="radio" name="category-path-form" id="path3">
+                    <input class="form-radio" type="radio" name="category-path-form" id="path1">
+                    <label for="path1">HOME</label> 
+                    <input class="form-radio" type="radio" name="category-path-form" id="path2">
+                    <label for="path2">MEN</label>   
+                    <input class="form-radio" type="radio" name="category-path-form" id="path3" checked>
                     <label for="path3">New Arrivals</label>       
                 </form>
             </div>
@@ -116,54 +116,73 @@
                         </ul>
                     </details>
                 </nav>
+                
                 <div class="items-box">
                     <div class="item-filter-boxes">
                         <form action="#" class="filter-form-box">
                             <p class="filter-form-text">Trending now</p>
-                            <input type="radio" id="Trending-now1" name="Trending-now">
-                            <label for="Trending-now1">Bohemian</label>
-                            <input type="radio" id="Trending-now2" name="Trending-now">
-                            <label for="Trending-now2">Floral</label>
-                            <input type="radio" id="Trending-now3" name="Trending-now">
-                            <label for="Trending-now3">Lace</label>
-                            <input type="radio" id="Trending-now4" name="Trending-now">
-                            <label for="Trending-now4">Floral</label>
-                            <input type="radio" id="Trending-now5" name="Trending-now">
-                            <label for="Trending-now5">Lace</label>
-                            <input type="radio" id="Trending-now6" name="Trending-now">
-                            <label for="Trending-now6">Bohemian</label>
+                            <input class="form-radio" type="radio" id="Trending-now1" name="Trending-now">
+                            <label class="form-radio-label" for="Trending-now1">Bohemian</label>
+                            <input class="form-radio" type="radio" id="Trending-now2" name="Trending-now">
+                            <label class="form-radio-label" for="Trending-now2">Floral</label>
+                            <input class="form-radio" type="radio" id="Trending-now3" name="Trending-now" checked>
+                            <label class="form-radio-label" for="Trending-now3">Lace</label>
+                            <input class="form-radio" type="radio" id="Trending-now4" name="Trending-now">
+                            <label class="form-radio-label" for="Trending-now4">Floral</label>
+                            <input class="form-radio" type="radio" id="Trending-now5" name="Trending-now">
+                            <label class="form-radio-label" for="Trending-now5">Lace</label>
+                            <input class="form-radio" type="radio" id="Trending-now6" name="Trending-now">
+                            <label class="form-radio-label" for="Trending-now6">Bohemian</label>
                         </form>
                         <form action="#" class="filter-form-box">
                             <p class="filter-form-text">Size</p>
                             <input type="checkbox" id="Size1" name="Trending-now">
-                            <label for="Size1">XXS</label>
+                            <label class="form-check-label" for="Size1">XXS</label>
                             <input type="checkbox" id="Size2" name="Trending-now">
-                            <label for="Size2">XS</label>
+                            <label class="form-check-label" for="Size2">XS</label>
                             <input type="checkbox" id="Size3" name="Trending-now">
-                            <label for="Size3">S</label>
+                            <label class="form-check-label" for="Size3">S</label>
                             <input type="checkbox" id="Size4" name="Trending-now">
-                            <label for="Size4">M</label>
+                            <label class="form-check-label" for="Size4">M</label>
                             <input type="checkbox" id="Size5" name="Trending-now">
-                            <label for="Size5">L</label>
+                            <label class="form-check-label" for="Size5">L</label>
                             <input type="checkbox" id="Size6" name="Trending-now">
-                            <label for="Size6">XL</label>
+                            <label class="form-check-label" for="Size6">XL</label>
                             <input type="checkbox" id="Size7" name="Trending-now">
-                            <label for="Size7">XXL</label>
+                            <label class="form-check-label" for="Size7">XXL</label>
                         </form>
                         <form action="#" class="filter-form-box">
-                            <p class="filter-form-text">Trending now</p>
-                            <input type="radio" id="Trending-now1" name="Trending-now">
-                            <label for="Trending-now1">Bohemian</label>
-                            <input type="radio" id="Trending-now2" name="Trending-now">
-                            <label for="Trending-now2">Floral</label>
-                            <input type="radio" id="Trending-now3" name="Trending-now">
-                            <label for="Trending-now3">Lace</label>
-                            <input type="radio" id="Trending-now4" name="Trending-now">
-                            <label for="Trending-now4">Floral</label>
-                            <input type="radio" id="Trending-now5" name="Trending-now">
-                            <label for="Trending-now5">Lace</label>
-                            <input type="radio" id="Trending-now6" name="Trending-now">
-                            <label for="Trending-now6">Bohemian</label>
+                            <p class="filter-form-text">pRICE</p>
+                            <input class="form-range" type="range" min="0" max="2000" id="price1" name="price">
+                            
+                        </form>
+                    </div>
+                    <div class="sort-settings">
+                        <form class="sort-settings-form" action="#">
+                           <div class="sort-settings-container">
+                            <p>Sort By</p>
+                            <p><select>
+                            <optgroup label="Trending now">
+                                <option value="n1">Bohemian</option>
+                                <option value="n2">Floral</option>
+                                <option value="n3" selected>Lace</option>
+                                <option value="n4">Bohemian</option>
+                                <option value="n5">Floral</option>
+                                <option value="n6">Lace</option>
+                            </optgroup>
+                            </select></p>
+                            </div>
+                            <div class="sort-settings-container">
+                            <p>Show</p>
+                            <p><select>
+                            <optgroup label="Count">
+                                <option value="v1" selected>9</option>
+                                <option value="v2">18</option>
+                                <option value="v3">36</option>
+                                <option value="v4">72</option>
+                            </optgroup>
+                            </select></p>
+                            </div>
                         </form>
                     </div>
                     <div class="items-container">
@@ -294,9 +313,51 @@
                             <p class="item-price">$52</p>
                         </div>
                     </div>
+                    <div class="items-lists">
+                        <ul class="items-lists-menu">
+                            <li><span><</span></li>
+                            <li><span class="active-page">1</span></li>
+                            <li><a class="items-lists-menu__link" href="#">2</a></li>
+                            <li><a class="items-lists-menu__link" href="#">3</a></li>
+                            <li><a class="items-lists-menu__link" href="#">4</a></li>
+                            <li><a class="items-lists-menu__link" href="#">5</a></li>
+                            <li><a class="items-lists-menu__link" href="#">6</a></li>
+                            <li><span>...</span></li>
+                            <li><a class="items-lists-menu__link" href="#">20</a></li>
+                            <li><a class="items-lists-menu__link-arrow active-page" href="#">></a></li>
+                        </ul>
+                        <a class="button-site all-prod" href="#">View All</a>
+                    </div>
                 </div>
             </div>
 
+        </div>
+    </div>
+    <div class="info-banner__product">
+        <div class="container">
+            <div class="info-banner__product-container">
+                <article class="info-banner-block-horizontal">
+                    <div class="info-banner-block-icon"><img src="img/delivery_img.svg" alt=""></div>
+                    <div class="info-banner-block-horizontal-text">
+                        <p class="info-banner-text-h">Free Delivery</p>
+                        <p class="info-banner-text1">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                    </div>
+                </article>
+             <article class="info-banner-block-horizontal">
+                    <div class="info-banner-block-icon"><img src="img/quality_img.svg" alt=""></div>
+                    <div class="info-banner-block-horizontal-text">
+                        <p class="info-banner-text-h">Sales & discounts</p>
+                        <p class="info-banner-text1">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                    </div>
+                </article>
+                <article class="info-banner-block-horizontal">
+                    <div class="info-banner-block-icon"><img src="img/discount_img.svg" alt=""></div>
+                    <div class="info-banner-block-horizontal-text">
+                        <p class="info-banner-text-h">Quality assurance</p>
+                        <p class="info-banner-text1">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                    </div>
+                </article>
+            </div>
         </div>
     </div>
     <div class="subscribe ">
