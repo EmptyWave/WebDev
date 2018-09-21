@@ -385,7 +385,6 @@ body {
 }
 
 .info-banner-text-h {
-
     color: #fbfbfb;
     font-size: 20px;
     font-weight: 700;
@@ -723,14 +722,16 @@ body {
 .filter-menu summary {
     width: 100%;
     height: 37px;
-    display: block;
-    padding: 13px 16px 0;
+    display: inline-flex;
+    padding-left: 14px;
     border-left: 4px solid #ef5b70;
     border-bottom: 1px solid #ebebeb;
     color: #6f6e6e;
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
+    align-items: center;
+    
 }
 .filter-menu summary::selection;{
     color: #ef5b70;
@@ -741,9 +742,7 @@ body {
 
 .filter-menu summary::after {
     content: '\25B6';
-    color: #ef5b70;
-    width: 100%;
-    
+    color: #ef5b70;   
 }
 
 details[open] > summary::after {
@@ -969,6 +968,8 @@ outline: none;
     width: 30%;
     height: 100%;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .info-banner__product-container {
@@ -1015,4 +1016,29 @@ font-weight: 400;
     color: #6f6e6e;
     font-size: 14px;
     font-weight: 400;
+}
+
+.info-banner-horizontal-text1 {
+       padding-top: 10px;
+    color: #fbfbfb;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+.info-banner-horizontal-text-h {
+     padding-top: 30px;
+    color: #fbfbfb;
+font-size: 20px;
+font-weight: 700;
+}
+
+.bottom-range-text {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+    color: #6f6e6e;
+font-size: 14px;
+font-weight: 400;
 }
