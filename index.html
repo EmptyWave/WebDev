@@ -58,56 +58,63 @@
                 </form>
             </div>
             <div class="header-right">
-                <a class="cart" href="#">
-                   <div class="cart-box">
-                    <img class="cart-icon" src="img/Forma_1.svg" alt="">
-                    <div class="cart-list-container">
-                    <div class="cart-item-box">
-                        <img class="cart-img" src="img/cart_img1.jpg" alt="product1">
-                        <div class="cart-product-info">
-                            <h3>Rebox Zane</h3>
-                            <p>
-                                <i class="fas fa-star item-stars"></i>
-                                <i class="fas fa-star item-stars"></i>
-                                <i class="fas fa-star item-stars"></i>
-                                <i class="fas fa-star item-stars"></i>
-                                <i class="fas fa-star-half-alt item-stars"></i>
-                            </p>
-                            <p>1 x $250</p>
-                        </div>
-                        <i class="fas fa-times-circle"></i>
-                    </div>
-                    <div class="cart-item-box">
-                        <img class="cart-img" src="img/cart_img2.jpg" alt="product2">
-                        <div class="cart-product-info">
-                            <h3>Rebox Zane</h3>
-                            <p>
-                                <i class="fas fa-star item-stars"></i>
-                                <i class="fas fa-star item-stars"></i>
-                                <i class="fas fa-star item-stars"></i>
-                                <i class="fas fa-star item-stars"></i>
-                                <i class="fas fa-star-half-alt item-stars"></i>
-                            </p>
-                            <p>1 x $250</p>
-                        </div>
-                        <i class="fas fa-times-circle"></i>
-                    </div>
-                    <div class="cart-price">
-                        <p>TOTAL</p>
-                        <p>$500.00</p>
-                    </div>
-                    <div class="cart-buttons-box">
-                        <div class="cart-buttons">
-                            <a class="button-site checkout-button" href="#">Checkout</a>
-                        </div>
-                        <div class="cart-buttons">
-                            <a class="cart-button" href="#">Go to cart</a>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                </a>
                 
+                    <div class="cart-box">
+                       <a class="cart" href="#">
+                        <img class="cart-icon" src="img/Forma_1.svg" alt="">
+                        </a>
+                        <div class="cart-list-container">
+                            <div class="cart-item-box">
+                              <div class="cart-item-container">
+                               <a href="single-page.html" class="single-page-link">
+                                <img class="cart-img" src="img/cart_img1.jpg" alt="product1">
+                                </a>
+                                <div class="cart-product-info">
+                                    <a href="single-page.html" class="single-page-link"><h3>Rebox Zane</h3></a>
+                                    <i class="fas fa-star item-stars"></i>
+                                    <i class="fas fa-star item-stars"></i>
+                                    <i class="fas fa-star item-stars"></i>
+                                    <i class="fas fa-star item-stars"></i>
+                                    <i class="fas fa-star-half-alt item-stars"></i>
+                                    <p>1 x $250</p>
+                                </div>
+                                <i class="fas fa-times-circle cart-del-item"></i>
+                                </div>
+                            </div>
+                            <div class="cart-item-box">
+                              <div class="cart-item-container">
+                               <a href="single-page.html" class="single-page-link">
+                                <img class="cart-img" src="img/cart_img2.jpg" alt="product2">
+                                </a>
+                                <div class="cart-product-info">
+                                    <a href="single-page.html" class="single-page-link"><h3>Rebox Zane</h3></a>
+                                    <i class="fas fa-star item-stars"></i>
+                                    <i class="fas fa-star item-stars"></i>
+                                    <i class="fas fa-star item-stars"></i>
+                                    <i class="fas fa-star item-stars"></i>
+                                    <i class="fas fa-star-half-alt item-stars"></i>
+                                    <p>1 x $250</p>
+                                </div>
+                                
+                                    <i class="fas fa-times-circle cart-del-item"></i>
+                                </div>
+                            </div>
+                            <div class="cart-price">
+                                <p>TOTAL</p>
+                                <p>$500.00</p>
+                            </div>
+                            <div class="cart-buttons-box">
+                                <div class="cart-buttons">
+                                    <a class="button-site checkout-button" href="#">Checkout</a>
+                                </div>
+                                <div class="cart-buttons">
+                                    <a class="cart-button" href="#">Go to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+
                 <a class="button-site my-acc" href="#">My Account</a>
             </div>
         </div>
@@ -604,7 +611,7 @@
                 </div>
             </div>
             <div class="section-batton">
-                <a class="button-site browse-prod" href="#">Browse All Product -></a>
+                <a class="button-site browse-prod" href="product.html">Browse All Product <i class="fas fa-long-arrow-alt-right"></i></a>
             </div>
         </div>
     </section>
@@ -668,7 +675,7 @@
                         <p class="subscribe-text"> FOR OUR NEWLETTER AND PROMOTION</p>
                     </div>
                     <div class="subscribe-form-box">
-                        <input class="subscribe-input-text" type="text" placeholder="Enter Your Email">
+                        <input class="subscribe-input-text" id="email" type="email" placeholder="Enter Your Email">
                         <button class="subscribe-button" type="submit">Subscribe</button>
 
                     </div>
