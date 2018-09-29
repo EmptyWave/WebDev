@@ -759,7 +759,7 @@ font-weight: 400;
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
     color: #ef5b70;
 }
-.filter-menu summary::selection;{
+.filter-menu summary::selection{
     color: #ef5b70;
 }
 .filter-menu summary::-webkit-details-marker {
