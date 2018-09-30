@@ -465,20 +465,34 @@
                 <a class="shopping-cart__button" href="##">cLEAR SHOPPING CART</a>
                 <a class="shopping-cart__button" href="product.html">cONTINUE sHOPPING</a>
             </div>
-            <div class="shopping-cart__checkout-form">
+            <div class="shopping-cart__forms">
                 <form action="#" class="shopping-cart__checkout-form__adress">
-                    <select name="country" id="">
+                    <h3 class="shopping-cart__checkout-form__h">Shipping Adress</h3>
+                    <select class="shopping-cart__checkout-form__country" name="country" id="country_name">
                         <option value="">1</option>
                         <option value="">2</option>
                         <option value="">3</option>
                         <option value="">4</option>
                     </select>
-                    <input type="text" placeholder="State" >
+                    <input class="shopping-cart__checkout-form__state" type="text" placeholder="State" pattern="[A-Za-z]">
+                    <input class="shopping-cart__checkout-form__zip" type="text" placeholder="Postcode / Zip" pattern="[0-9]{3}">
+                    <input class="shopping-cart__checkout-form__button" type="button" name="Sumbit" value="get a quote">
                 </form>
+                <form action="##" class="shopping-cart__discount-form">
+                    <h3 class="shopping-cart__discount-form__h">coupon  discount</h3>
+                    <p class="shopping-cart__discount-form__p">Enter your coupon code if you have one</p>
+                    <input class="shopping-cart__discount-form__coupon-code" type="text" placeholder="Code" pattern="[A-Za-z0-9]{6}">
+                    <input class="shopping-cart__checkout-form__button" type="button" name="Sumbit" value="Apply coupon">
+                </form>
+                <div class="shopping-cart__cost">
+                    <p class="shopping-cart__cost__p">Sub total         $900</p>
+                    <h3 class="shopping-cart__cost__h">GRAND TOTAL      $900</h3>
+                    <a class="button-site checkout-button" href="checkout.html">proceed to checkout</a>
+                </div>
             </div>
         </div>
     </div>
-    <div class="subscribe ">
+    <div class="subscribe">
         <div class="subscribe-img">
             <img class="sub-background" src="img/subscribe_back.jpg" alt="subscribe-background">
         </div>

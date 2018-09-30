@@ -90,11 +90,40 @@
     border: 1px solid #4a4a4a;
     transition: all 300ms ease; }
 
+.shopping-cart__forms {
+  display: flex;
+  justify-content: space-between; }
+
 .shopping_cart__product-other__input {
   width: 50px;
   color: #656565;
   font: 400 13px Lato;
   text-align: center; }
+
+.shopping-cart__checkout-form__adress {
+  width: 33.33333%; }
+
+.shopping-cart__checkout-form__country {
+  width: 355px;
+  border: 1px solid #eaeaea; }
+
+.shopping-cart__checkout-form__state {
+  width: 353px;
+  border: 1px solid #eaeaea; }
+
+.shopping-cart__checkout-form__zip {
+  width: 353px;
+  border: 1px solid #eaeaea; }
+
+.shopping-cart__discount-form {
+  width: 33.33333%; }
+
+.shopping-cart__discount-form__coupon-code {
+  width: 353px;
+  border: 1px solid #eaeaea; }
+
+.shopping-cart__cost {
+  background-color: #f5f3f3; }
 
 body {
   font-family: "Lato", sans-serif; }
