@@ -353,41 +353,91 @@
         <div class="container">
             <ul class="order__menu">
                 <li>
-                    <details class="order__headers">
+                    <details class="order__headers" open>
                         <summary class="order__header">
                             01.   Shipping Adress
                         </summary>
                         <div class="order-form-box">
-                            <form action="" class="order__form">
-                                <h3>Check as a guest or register</h3>
-                                <p>Register with us for future convenience</p>
-                                <input type="radio" id="order__form-radio1">
-                                <label for="order__form-radio1"></label>
-                                <input type="radio" id="order__form-radio2">
-                                <label for="order__form-radio2"></label>
-                                <h3>register and save time!</h3>
-                                <p>Register with us for future convenience</p>
-                                <details>
-                                    <summary>
+                            <form action="" class="order-form">
+                                <h3 class="order-form__h">Check as a guest or register</h3>
+                                <p class="order-form__p">Register with us for future convenience</p>
+                                <div class="order-form__radio-box">
+                                    <input class="order-form__radio" type="radio" id="order-form-radio1" name="usertype">
+                                    <label class="order-form__radio-label" for="order-form-radio1">checkout as guest</label>
+                                    <input class="order-form__radio" type="radio" id="order-form-radio2" name="usertype">
+                                    <label class="order-form__radio-label" for="order-form-radio2">register</label>
+                                </div>
+                                <h3 class="order-form__h">register and save time!</h3>
+                                <p class="order-form__p">Register with us for future convenience</p>
+                                <details class="order-form__details">
+                                    <summary class="order-form__summary">
                                         Fast and easy checkout
                                     </summary>
                                 </details>
-                                <details>
-                                    <summary>
+                                <details class="order-form__details">
+                                    <summary class="order-form__summary">
                                         Easy access to your order history and status
                                     </summary>
                                 </details>
-                                <a href="##" class="cart-button cart-discount-form__button">Continue</a>
+                                <a href="#details2" class="cart-button order-form__button">Continue</a>
                             </form>
-                            <form action="" class="order__form">
-                                <h3>Already registed?</h3>
-                                <p>Please log in below</p>
-                                <label for="login_email">EMAIL ADDRESS</label>
-                                <input type="email" id="login_email">
-                                <label for="login_pass">PASSWORD</label>
-                                <input type="password" id="login_pass">
-                                <p></p>
-                                <div><a href="##" class="cart-button cart-discount-form__button">Log in</a><a href="">Forgot Password ?</a></div>
+                            <form action="" class="order-form">
+                                <h3 class="order-form__h">Already registed?</h3>
+                                <p class="order-form__p">Please log in below</p>
+                                <label class="order-form__text-label" for="login_email">EMAIL ADDRESS</label>
+                                <input class="order-form__text" type="email" id="login_email">
+                                <label class="order-form__text-label" for="login_pass">PASSWORD</label>
+                                <input class="order-form__text" type="password" id="login_pass">
+                                <p  class="order-form__p__red">* Required Fileds</p>
+                                <div class="order-form__button-box">
+                                    <a href="##" class="cart-button order-form__button">Log in</a>
+                                    <a href="##" class="order-form__link">Forgot Password ?</a>
+                                </div>
+                            </form>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details class="order__headers" id="details2">
+                        <summary class="order__header">
+                            02.   BILLING INFORMATION
+                        </summary>
+                        <div class="order-form-box">
+                            <form action="" class="order-form">
+                                <h3 class="order-form__h">Check as a guest or register</h3>
+                                <p class="order-form__p">Register with us for future convenience</p>
+                                <div class="order-form__radio-box">
+                                    <input class="order-form__radio" type="radio" id="order-form-radio1" name="usertype">
+                                    <label class="order-form__radio-label" for="order-form-radio1">checkout as guest</label>
+                                    <input class="order-form__radio" type="radio" id="order-form-radio2" name="usertype">
+                                    <label class="order-form__radio-label" for="order-form-radio2">register</label>
+                                </div>
+                                <h3 class="order-form__h">register and save time!</h3>
+                                <p class="order-form__p">Register with us for future convenience</p>
+                                <details class="order-form__details">
+                                    <summary class="order-form__summary">
+                                        Fast and easy checkout
+                                    </summary>
+                                </details>
+                                <details class="order-form__details">
+                                    <summary class="order-form__summary">
+                                        Easy access to your order history and status
+                                    </summary>
+                                </details>
+                                <a href="##" class="cart-button order-form__button">Continue</a>
+                            </form>
+                            <form action="" class="order-form">
+                                <h3 class="order-form__h">Already registed?</h3>
+                                <p class="order-form__p">Please log in below</p>
+                                <label class="order-form__text-label" for="login_email">EMAIL ADDRESS</label>
+                                <input class="order-form__text" type="email" id="login_email">
+                                <label class="order-form__text-label" for="login_pass">PASSWORD</label>
+                                <input class="order-form__text" type="password" id="login_pass">
+                                <p  class="order-form__p__red">* Required Fileds</p>
+                                <div class="order-form__button-box">
+                                    <a href="##" class="cart-button order-form__button">Log in</a>
+                                    <a href="##" class="order-form__link">Forgot Password ?</a>
+                                </div>
                             </form>
                         </div>
                     </details>
@@ -395,21 +445,44 @@
                 <li>
                     <details class="order__headers">
                         <summary class="order__header">
-                            01.   Shipping Adress
+                            03.   SHIPPING INFORMATION
                         </summary>
                         <div class="order-form-box">
-                            <form action="" class="order__form">
-                                <h3></h3>
-                                <p></p>
-                                <input type="radio">
-                                <input type="radio">
-                                <h3></h3>
-                                <p></p>
-                                <details></details>
-                                <details></details>
+                            <form action="" class="order-form">
+                                <h3 class="order-form__h">Check as a guest or register</h3>
+                                <p class="order-form__p">Register with us for future convenience</p>
+                                <div class="order-form__radio-box">
+                                    <input class="order-form__radio" type="radio" id="order-form-radio1" name="usertype">
+                                    <label class="order-form__radio-label" for="order-form-radio1">checkout as guest</label>
+                                    <input class="order-form__radio" type="radio" id="order-form-radio2" name="usertype">
+                                    <label class="order-form__radio-label" for="order-form-radio2">register</label>
+                                </div>
+                                <h3 class="order-form__h">register and save time!</h3>
+                                <p class="order-form__p">Register with us for future convenience</p>
+                                <details class="order-form__details">
+                                    <summary class="order-form__summary">
+                                        Fast and easy checkout
+                                    </summary>
+                                </details>
+                                <details class="order-form__details">
+                                    <summary class="order-form__summary">
+                                        Easy access to your order history and status
+                                    </summary>
+                                </details>
+                                <a href="##" class="cart-button order-form__button">Continue</a>
                             </form>
-                            <form action="" class="order__form">
-
+                            <form action="" class="order-form">
+                                <h3 class="order-form__h">Already registed?</h3>
+                                <p class="order-form__p">Please log in below</p>
+                                <label class="order-form__text-label" for="login_email">EMAIL ADDRESS</label>
+                                <input class="order-form__text" type="email" id="login_email">
+                                <label class="order-form__text-label" for="login_pass">PASSWORD</label>
+                                <input class="order-form__text" type="password" id="login_pass">
+                                <p  class="order-form__p__red">* Required Fileds</p>
+                                <div class="order-form__button-box">
+                                    <a href="##" class="cart-button order-form__button">Log in</a>
+                                    <a href="##" class="order-form__link">Forgot Password ?</a>
+                                </div>
                             </form>
                         </div>
                     </details>
@@ -417,21 +490,44 @@
                 <li>
                     <details class="order__headers">
                         <summary class="order__header">
-                            01.   Shipping Adress
+                            04.   SHIPPING METHOD
                         </summary>
                         <div class="order-form-box">
-                            <form action="" class="order__form">
-                                <h3></h3>
-                                <p></p>
-                                <input type="radio">
-                                <input type="radio">
-                                <h3></h3>
-                                <p></p>
-                                <details></details>
-                                <details></details>
+                            <form action="" class="order-form">
+                                <h3 class="order-form__h">Check as a guest or register</h3>
+                                <p class="order-form__p">Register with us for future convenience</p>
+                                <div class="order-form__radio-box">
+                                    <input class="order-form__radio" type="radio" id="order-form-radio1" name="usertype">
+                                    <label class="order-form__radio-label" for="order-form-radio1">checkout as guest</label>
+                                    <input class="order-form__radio" type="radio" id="order-form-radio2" name="usertype">
+                                    <label class="order-form__radio-label" for="order-form-radio2">register</label>
+                                </div>
+                                <h3 class="order-form__h">register and save time!</h3>
+                                <p class="order-form__p">Register with us for future convenience</p>
+                                <details class="order-form__details">
+                                    <summary class="order-form__summary">
+                                        Fast and easy checkout
+                                    </summary>
+                                </details>
+                                <details class="order-form__details">
+                                    <summary class="order-form__summary">
+                                        Easy access to your order history and status
+                                    </summary>
+                                </details>
+                                <a href="##" class="cart-button order-form__button">Continue</a>
                             </form>
-                            <form action="" class="order__form">
-
+                            <form action="" class="order-form">
+                                <h3 class="order-form__h">Already registed?</h3>
+                                <p class="order-form__p">Please log in below</p>
+                                <label class="order-form__text-label" for="login_email">EMAIL ADDRESS</label>
+                                <input class="order-form__text" type="email" id="login_email">
+                                <label class="order-form__text-label" for="login_pass">PASSWORD</label>
+                                <input class="order-form__text" type="password" id="login_pass">
+                                <p  class="order-form__p__red">* Required Fileds</p>
+                                <div class="order-form__button-box">
+                                    <a href="##" class="cart-button order-form__button">Log in</a>
+                                    <a href="##" class="order-form__link">Forgot Password ?</a>
+                                </div>
                             </form>
                         </div>
                     </details>
@@ -439,21 +535,44 @@
                 <li>
                     <details class="order__headers">
                         <summary class="order__header">
-                            01.   Shipping Adress
+                            05.   PAYMENT METHOD
                         </summary>
                         <div class="order-form-box">
-                            <form action="" class="order__form">
-                                <h3></h3>
-                                <p></p>
-                                <input type="radio">
-                                <input type="radio">
-                                <h3></h3>
-                                <p></p>
-                                <details></details>
-                                <details></details>
+                            <form action="" class="order-form">
+                                <h3 class="order-form__h">Check as a guest or register</h3>
+                                <p class="order-form__p">Register with us for future convenience</p>
+                                <div class="order-form__radio-box">
+                                    <input class="order-form__radio" type="radio" id="order-form-radio1" name="usertype">
+                                    <label class="order-form__radio-label" for="order-form-radio1">checkout as guest</label>
+                                    <input class="order-form__radio" type="radio" id="order-form-radio2" name="usertype">
+                                    <label class="order-form__radio-label" for="order-form-radio2">register</label>
+                                </div>
+                                <h3 class="order-form__h">register and save time!</h3>
+                                <p class="order-form__p">Register with us for future convenience</p>
+                                <details class="order-form__details">
+                                    <summary class="order-form__summary">
+                                        Fast and easy checkout
+                                    </summary>
+                                </details>
+                                <details class="order-form__details">
+                                    <summary class="order-form__summary">
+                                        Easy access to your order history and status
+                                    </summary>
+                                </details>
+                                <a href="##" class="cart-button order-form__button">Continue</a>
                             </form>
-                            <form action="" class="order__form">
-
+                            <form action="" class="order-form">
+                                <h3 class="order-form__h">Already registed?</h3>
+                                <p class="order-form__p">Please log in below</p>
+                                <label class="order-form__text-label" for="login_email">EMAIL ADDRESS</label>
+                                <input class="order-form__text" type="email" id="login_email">
+                                <label class="order-form__text-label" for="login_pass">PASSWORD</label>
+                                <input class="order-form__text" type="password" id="login_pass">
+                                <p  class="order-form__p__red">* Required Fileds</p>
+                                <div class="order-form__button-box">
+                                    <a href="##" class="cart-button order-form__button">Log in</a>
+                                    <a href="##" class="order-form__link">Forgot Password ?</a>
+                                </div>
                             </form>
                         </div>
                     </details>
@@ -461,65 +580,44 @@
                 <li>
                     <details class="order__headers">
                         <summary class="order__header">
-                            01.   Shipping Adress
+                            06.   ORDER REVIEW
                         </summary>
                         <div class="order-form-box">
-                            <form action="" class="order__form">
-                                <h3></h3>
-                                <p></p>
-                                <input type="radio">
-                                <input type="radio">
-                                <h3></h3>
-                                <p></p>
-                                <details></details>
-                                <details></details>
+                            <form action="" class="order-form">
+                                <h3 class="order-form__h">Check as a guest or register</h3>
+                                <p class="order-form__p">Register with us for future convenience</p>
+                                <div class="order-form__radio-box">
+                                    <input class="order-form__radio" type="radio" id="order-form-radio1" name="usertype">
+                                    <label class="order-form__radio-label" for="order-form-radio1">checkout as guest</label>
+                                    <input class="order-form__radio" type="radio" id="order-form-radio2" name="usertype">
+                                    <label class="order-form__radio-label" for="order-form-radio2">register</label>
+                                </div>
+                                <h3 class="order-form__h">register and save time!</h3>
+                                <p class="order-form__p">Register with us for future convenience</p>
+                                <details class="order-form__details">
+                                    <summary class="order-form__summary">
+                                        Fast and easy checkout
+                                    </summary>
+                                </details>
+                                <details class="order-form__details">
+                                    <summary class="order-form__summary">
+                                        Easy access to your order history and status
+                                    </summary>
+                                </details>
+                                <a href="##" class="cart-button order-form__button">Continue</a>
                             </form>
-                            <form action="" class="order__form">
-
-                            </form>
-                        </div>
-                    </details>
-                </li>
-                <li>
-                    <details class="order__headers">
-                        <summary class="order__header">
-                            01.   Shipping Adress
-                        </summary>
-                        <div class="order-form-box">
-                            <form action="" class="order__form">
-                                <h3></h3>
-                                <p></p>
-                                <input type="radio">
-                                <input type="radio">
-                                <h3></h3>
-                                <p></p>
-                                <details></details>
-                                <details></details>
-                            </form>
-                            <form action="" class="order__form">
-
-                            </form>
-                        </div>
-                    </details>
-                </li>
-                <li>
-                    <details class="order__headers">
-                        <summary class="order__header">
-                            01.   Shipping Adress
-                        </summary>
-                        <div class="order-form-box">
-                            <form action="" class="order__form">
-                                <h3></h3>
-                                <p></p>
-                                <input type="radio">
-                                <input type="radio">
-                                <h3></h3>
-                                <p></p>
-                                <details></details>
-                                <details></details>
-                            </form>
-                            <form action="" class="order__form">
-
+                            <form action="" class="order-form">
+                                <h3 class="order-form__h">Already registed?</h3>
+                                <p class="order-form__p">Please log in below</p>
+                                <label class="order-form__text-label" for="login_email">EMAIL ADDRESS</label>
+                                <input class="order-form__text" type="email" id="login_email">
+                                <label class="order-form__text-label" for="login_pass">PASSWORD</label>
+                                <input class="order-form__text" type="password" id="login_pass">
+                                <p  class="order-form__p__red">* Required Fileds</p>
+                                <div class="order-form__button-box">
+                                    <a href="##" class="cart-button order-form__button">Log in</a>
+                                    <a href="##" class="order-form__link">Forgot Password ?</a>
+                                </div>
                             </form>
                         </div>
                     </details>
