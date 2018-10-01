@@ -32,11 +32,15 @@
   width: 45%; }
   .cart-product-details__text-box {
     margin-left: 21px; }
+  .cart-product-details__link {
+    text-decoration: none; }
   .cart-product-details__h {
     color: #222222;
     font: 400 13px Lato;
     text-transform: uppercase;
     padding-bottom: 38px; }
+    .cart-product-details__h:hover {
+      color: #f16d7f; }
   .cart-product-details__p {
     color: #222222;
     font: 400 13px Lato; }
@@ -1042,7 +1046,7 @@ details[open] > summary {
   background-color: #ffffff;
   top: 50px;
   border: 1px solid #e8e8e8;
-  z-index: 1; }
+  z-index: 10; }
   .mega-box::before {
     content: "";
     display: block;
@@ -1329,8 +1333,7 @@ details[open] > summary {
 .filter-form-link:last-of-type {
   border-right: 0; }
 
-.product-banner-images {
-  position: relative;
+.single-product-img {
   display: flex;
   background-color: #f7f7f7;
   height: 777px;
@@ -1344,16 +1347,34 @@ details[open] > summary {
   width: 1141px;
   position: absolute;
   top: -80px;
-  text-align: center; }
+  text-align: center;
+  z-index: 10; }
 
 .product-menu {
   height: 730px;
   position: relative; }
 
-.product-banner-image {
+.single-product-slider {
+  position: relative;
   display: flex;
   height: 100%;
-  background: url(img/singl_product_img.jpg) no-repeat center; }
+  width: 100%; }
+  .single-product-slider__slide {
+    text-align: center;
+    position: absolute;
+    height: 100%;
+    width: 100%; }
+    .single-product-slider__slide__prev {
+      position: absolute;
+      left: 0;
+      top: 330px; }
+    .single-product-slider__slide__next {
+      position: absolute;
+      right: 0;
+      top: 330px; }
+
+.single-product-slider .single-product-slider__slide:target {
+  z-index: 9; }
 
 .interest-product-box-h {
   color: #4d4d4d;
@@ -1375,7 +1396,6 @@ details[open] > summary {
   font-size: 24px;
   color: #ffffff;
   padding-top: 20px;
-  margin: auto 0;
   text-align: center;
   width: 47px;
   height: 47px;
@@ -1525,9 +1545,6 @@ details[open] > summary {
   border: 1px solid #eaeaea;
   width: 144px;
   padding: 12px 15px;
-  font: 900 12px "Font Awesome 5 Free";
-  /*font-family: "Font Awesome 5 Free" */
-  /*font-weight: 900 */
-  /*font-size: 12px */ }
+  font: 900 12px "Font Awesome 5 Free"; }
 
 /*# sourceMappingURL=Sass_style.css.map */
