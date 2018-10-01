@@ -1,0 +1,29 @@
+.order
+  margin-bottom: 90px
+  &__menu
+    list-style: none
+  &__headers
+    padding: 30px
+    border-bottom: 1px solid $gray-border
+    .order__header::-webkit-details-marker
+      display: none
+    &[open]
+      .order__header
+        color: $pink
+  &__header
+      color: #222222
+      font-size: 16px
+      font-weight: 700
+      text-transform: uppercase
+      outline: none
+
+  &__form
+    padding-top: 40px
+    width: 390px
+    display: block
+    flex-flow: column wrap
+
+.order-form-box
+  height: 342px
+  display: flex
+  justify-content: space-around

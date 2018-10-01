@@ -206,6 +206,7 @@ body
   font-weight: 700
   line-height: 54px
   text-decoration: none
+  padding: 15px 29px
 
 
 .section-batton
@@ -721,21 +722,24 @@ body
     &:hover
       box-shadow: 0 0 16px rgba(0, 0, 0, 0.16)
       color: #ef5b70
+      transition: all 300ms ease
     &::selection
       color: #ef5b70
+      transition: all 300ms ease
     &::-webkit-details-marker
       display: none
     &::after
       content: '\25B6'
       color: #ef5b70 /* вероятно накосячил*/
-
-details[open] > summary::after
-  content: '\25BC'
-
-
-details[open] > summary
-  color: #ef5b70
-  font-weight: 700
+      transition: all 300ms ease
+  &[open]
+    summary
+      color: #ef5b70
+      font-weight: 700
+      transition: all 300ms ease
+      &::after
+        content: '\25BC'
+        transition: all 300ms ease
 
 .filter-menu-link
   display: block
