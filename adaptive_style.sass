@@ -1,0 +1,131 @@
+*
+  margin: 0
+  padding: 0
+
+@import "adaptive-var"
+
+body
+  font-family: 'Lato', sans-serif
+
+.container
+  margin: 0 auto
+  max-width: 1140px
+
+.header
+  position: relative
+  background-color: #f1e4e6
+  &__flex
+    display: flex
+  &__img-box
+    width: 49%
+    img
+      width: 100%
+  &__container
+    width: 50%
+  &__text-box
+    margin-top: 30%
+    margin-left: 7%
+    padding-left: 12px
+    border-left: 12px solid $pink
+  &__h
+    color: #222222
+    font-size: 60px
+    font-weight: 700
+    text-transform: uppercase
+    letter-spacing: 1.5px
+    line-height: 40px
+  &__p
+    color: #222222
+    font-size: 40px
+    font-weight: 700
+    text-transform: uppercase
+    letter-spacing: 1px
+    line-height: 32px
+    padding-top: 20px
+    &__pink
+      color: $pink
+
+.header-nav
+  &__input-search
+    display: none
+    background-color: #f1e4e6
+    padding: 10px 15px
+    margin-left: 20px
+    margin-top: 14px
+    width: 50%
+    height: 30px
+    border: 1px solid #595959
+    border-radius: 3px
+    color: #595959
+    font-size: 20px
+  &__left
+    width: 50%
+    display: flex
+    flex-flow: row nowrap
+    position: absolute
+    justify-content: flex-start
+  &__right
+    display: flex
+    flex-flow: row nowrap
+    position: relative
+    justify-content: flex-end
+  &__link
+    width: $header-nav-box-size
+    height: $header-nav-box-size
+    display: block
+    text-align: center
+    text-decoration: none
+    font-size: 26px
+    color: #595959
+    line-height: 68px
+    &__call-menu
+      &:active ~ .menu
+        display: flex
+    &__call-search
+      &:active ~ .header-nav__input-search
+        display: block
+    &__black
+      background-color: #222222
+      color: white
+      &:hover
+        background-color: white
+        color: #595959
+    &:hover
+      box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.17)
+
+.header-nav-drop
+  &__long
+    display: flex
+    left: 0
+    width: 100%
+    min-height: 44px
+    top: 100px
+    background-color: #fff
+    align-items: center
+
+.menu
+  position: absolute
+  top: 100px
+  width: 75%
+  padding-left: 10%
+  padding-right: 15%
+  display: none
+  flex-flow: row nowrap
+  list-style-type: none
+  justify-content: space-around
+  background-color: #ffffff
+  &__link
+    display: block
+    text-decoration: none
+    color: #232323
+    font-size: 16px
+    font-weight: 300
+    letter-spacing: 0.4px
+    padding: 10px 0
+    white-space: nowrap
+    &:hover
+      color: $pink
+
+.menu-list
+  position: relative
+
