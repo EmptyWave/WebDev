@@ -7,9 +7,10 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 1140px; }
+  width: 1140px; }
 
 .header {
+  max-width: 100%;
   position: relative;
   background-color: #f1e4e6; }
   .header__flex {
@@ -20,6 +21,8 @@ body {
       width: 100%; }
   .header__container {
     width: 50%; }
+    .header__container__white {
+      background-color: #f4f3f3; }
   .header__text-box {
     margin-top: 30%;
     margin-left: 7%;
@@ -122,5 +125,150 @@ body {
 
 .menu-list {
   position: relative; }
+
+.category {
+  margin-top: 98px; }
+  .category__p {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.45px; }
+  .category__h {
+    color: #f16d7f;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.75px; }
+  .category__box {
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    grid-column-gap: 28px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+    text-align: center; }
+    .category__box__small {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 260px; }
+    .category__box__long {
+      height: 180px;
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .category__box__man {
+      background: url("adaptive_img/category-man.jpg"); }
+    .category__box__women {
+      background: url("adaptive_img/category-woman.jpg"); }
+    .category__box__kids {
+      background: url("adaptive_img/category-kids.jpg"); }
+    .category__box__accesoryes {
+      background: url("adaptive_img/category-accesoryes.jpg"); }
+
+.product {
+  margin-top: 98px; }
+  .product__container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    grid-column-gap: 28px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch; }
+  .product__box {
+    margin-top: 50px;
+    transition: all 300ms ease;
+    background-color: #f8f8f8; }
+    .product__box:hover {
+      box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.17);
+      transition: all 300ms ease; }
+  .product__img-box {
+    position: relative;
+    transition: all 300ms ease; }
+    .product__img-box img {
+      height: 100%;
+      width: 100%; }
+    .product__img-box:hover .product__hide-box {
+      opacity: 0.5;
+      transition: all 300ms ease; }
+    .product__img-box:hover .product__cart-box-text {
+      opacity: 1;
+      transition: all 300ms ease; }
+  .product__hide-box {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0; }
+  .product__cart-box-text {
+    position: absolute;
+    top: 45%;
+    left: 35.29%;
+    text-decoration: none;
+    padding: 8px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 300ms ease;
+    opacity: 0; }
+    .product__cart-box-text:hover {
+      box-shadow: 0 0 5px #fff;
+      transition: all 300ms ease; }
+  .product__text-box {
+    display: block;
+    padding: 18px; }
+  .product__name {
+    padding-top: 8px;
+    color: #000000;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.33px; }
+  .product__about {
+    padding-top: 19px;
+    color: #5d5d5d;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.35px; }
+  .product__price {
+    padding-top: 19px;
+    color: #f16d7f;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase; }
+  .product__h {
+    color: #222222;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 54px;
+    letter-spacing: 0.75px;
+    text-align: center; }
+  .product__p {
+    color: #9f9f9f;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: 0.35px;
+    text-align: center; }
+
+.feature {
+  margin-top: 85px;
+  background-color: #222224;
+  height: 341px; }
+  .feature__container {
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    grid-column-gap: 28px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch; }
+  .feature__box {
+    width: 100%;
+    height: 100%; }
 
 /*# sourceMappingURL=adaptive_style.css.map */
