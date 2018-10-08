@@ -255,6 +255,16 @@ body {
     line-height: 54px;
     letter-spacing: 0.35px;
     text-align: center; }
+  .product__button-box {
+    text-align: center;
+    margin-top: 55px; }
+  .product__button {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 54px;
+    text-decoration: none;
+    padding: 15px 29px; }
 
 .feature {
   margin-top: 85px;
@@ -268,7 +278,74 @@ body {
     justify-items: stretch;
     align-items: stretch; }
   .feature__box {
+    margin-top: 20%;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    display: block;
+    text-align: center;
+    justify-content: center; }
+    .feature__box img {
+      height: 40px;
+      width: 40px; }
+  .feature__h {
+    padding-top: 23px;
+    color: #fbfbfb;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px; }
+  .feature__p {
+    padding-top: 21px;
+    color: #fbfbfb;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.71;
+    letter-spacing: 0.35px; }
+
+.button-site {
+  background-color: #f16d7f;
+  border: 1px solid;
+  transition: all 300ms ease;
+  text-decoration: none; }
+  .button-site:hover {
+    background-color: #fff;
+    color: #f16d7f;
+    transition: all 300ms ease; }
+
+.review__container {
+  display: flex; }
+.review__left {
+  width: 50%;
+  margin: 0 auto; }
+.review__logo-box {
+  margin: 90px;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 2fr 2fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
+  transition: all 300ms ease; }
+  .review__logo-box img {
+    width: 100%; }
+  .review__logo-box__link:hover {
+    transition: all 300ms ease;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.17); }
+.review__img-container {
+  padding: 10px; }
+.review__right {
+  width: 50%; }
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 5fr 2fr 2fr 2fr 1fr;
+  grid-template-rows: 2fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch; }
+.footer__rights {
+  height: 1.7%;
+  background-color: #e6e6e6; }
 
 /*# sourceMappingURL=adaptive_style.css.map */
