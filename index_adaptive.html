@@ -14,7 +14,7 @@
         <div class="header__flex">
             <div class="header__container header__container__white">
                 <div class="header-nav__left">
-                    <a href="index_adaptive.html" class="header-nav__link header-nav__link__black">icon</a>
+                    <a href="index_adaptive.html" class="header-nav__link header-nav__link__black"><img src="adaptive_img/header-logo.png" alt=""></a>
                     <a href="#search" class="header-nav__link header-nav__link__call-search"><i class="fas fa-search header-nav__box__icon"></i></a>
                     <input class="header-nav__input-search" type="text">
                 </div>
@@ -46,30 +46,34 @@
     <div class="category">
         <div class="container">
             <div class="category__box">
-                <div class="category__box__small category__box__man">
+                <a class="category__link" href=""><div class="category__box__small category__box__man">
                     <div class="category__text-box">
                         <p class="category__p">hOT dEAL</p>
                         <h3 class="category__h">FOR MEN</h3>
                     </div>
-                </div>
-                <div class="category__box__small category__box__women">
+                </div></a>
+                <a class="category__link" href=""><div class="category__box__small category__box__women">
                     <div class="category__text-box">
                         <p class="category__p">30% off</p>
                         <h3 class="category__h">FOR women</h3>
                     </div>
-                </div>
-                <div class="category__box__small category__box__kids">
+                </div></a>
+                <a class="category__link" href=""><div class="category__box__small category__box__kids">
                     <div class="category__text-box">
                         <p class="category__p">new arrivals</p>
                         <h3 class="category__h">FOR kids</h3>
                     </div>
-                </div>
+                </div></a>
             </div>
-            <div class="category__box__long category__box__accesoryes">
-                <div class="category__text-box">
-                    <p class="category__p">LUXIROUS & trendy</p>
-                    <h3 class="category__h">ACCESORIES</h3>
+            <div class="category__box__long">
+            <a class="category__link" href="">
+                <div class="category__box__accesoryes">
+                    <div class="category__text-box">
+                        <p class="category__p">LUXIROUS & trendy</p>
+                        <h3 class="category__h">ACCESORIES</h3>
+                    </div>
                 </div>
+            </a>
             </div>
         </div>
     </div>
@@ -184,41 +188,114 @@
         </div>
     </div>
     <div class="subscribe">
-        <div class="container">
-            <div class="subscribe__box">
-                <a href="#" class="feature__logo-link"></a>
-                <a href="#" class="feature__logo-link"></a>
-                <a href="#" class="feature__logo-link"></a>
-                <a href="#" class="feature__logo-link"></a>
+        <div class="container subscribe__container">
+            <div class="subscribe__left">
+                <div class="subscribe__logo-box">
+                    <a href="" class="subscribe__logo-box__link"><img src="adaptive_img/review-logo1.jpg" alt=""></a>
+                    <a href="" class="subscribe__logo-box__link"><img src="adaptive_img/review-logo2.jpg" alt=""></a>
+                    <a href="" class="subscribe__logo-box__link"><img src="adaptive_img/review-logo3.jpg" alt=""></a>
+                    <a href="" class="subscribe__logo-box__link"><img src="adaptive_img/review-logo4.jpg" alt=""></a>
+                </div>
             </div>
-            <div class="subscribe__box">
-                <form action="wtf.php" class="feature__form">
-
+            <div class="subscribe__right">
+                <div class="subscribe__text-box">
+                    <h3 class="subscribe__h">Subscribe</h3>
+                    <p class="subscribe__p">FOR OUR NEWLETTER AND PROMOTION</p>
+                </div>
+                <form action="wtf.php" class="subscribe__form">
+                    <input class="subscribe__input" id="email" type="email" placeholder="Enter Your Email">
+                    <button class="subscribe__button" type="submit">Subscribe</button>
                 </form>
             </div>
         </div>
     </div>
     <div class="review">
-        <div class="container review__container">
-            <div class="review__left">
-                <div class="review__logo-box">
-                    <a href="" class="review__logo-box__link"><img src="adaptive_img/review-logo1.jpg" alt=""></a>
-                    <a href="" class="review__logo-box__link"><img src="adaptive_img/review-logo2.jpg" alt=""></a>
-                    <a href="" class="review__logo-box__link"><img src="adaptive_img/review-logo3.jpg" alt=""></a>
-                    <a href="" class="review__logo-box__link"><img src="adaptive_img/review-logo4.jpg" alt=""></a>
+        <div class="container">
+            <div class="review__slider">
+                <div class="review__slide slide1">
+                    <img src="adaptive_img/review-photo1.png" alt="">
+                    <p class="review__text">“Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                        a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”</p>
+                    <p class="review__name">Bin Burhan</p>
+                    <p class="review__location">Dhaka, Bd</p>
+                </div>
+                <div class="review__slide slide2">
+
+                </div>
+                <div class="review__slide slide3">
+
                 </div>
             </div>
-            <div class="review__right"></div>
+            <ul class="review__radio-list">
+                <li>
+                    <input class="review__radio" type="radio" name="slide" id="radio1">
+                    <label for="radio1" class="review__radio__btn"> </label>
+                </li>
+                <li>
+                    <input class="review__radio" type="radio" name="slide" id="radio2">
+                    <label for="radio2" class="review__radio__btn"> </label>
+                </li>
+                <li>
+                    <input class="review__radio" type="radio" name="slide" id="radio3">
+                    <label for="radio3" class="review__radio__btn"> </label>
+                </li>
+            </ul>
         </div>
     </div>
     <footer class="footer">
         <div class="container footer__container">
-            <section class="footer__brand"></section>
-            <div class="section footer__menu"></div>
-            <div class="section footer__menu"></div>
-            <div class="section footer__menu"></div>
+            <section class="footer__box">
+                <a href="index_adaptive.html" class="footer__logo-box">
+                    <img src="adaptive_img/footer-logo.jpg" alt="logo">
+                    <h3 class="footer__brand">BRAN<span>D</span></h3>
+                </a>
+                <p class="footer__p">Objectively transition extensive data rather than cross functional solutions.
+                    Monotonectally syndicate multidisciplinary materials before go forward benefits.
+                    Intrinsicly syndicate an expanded array of processes and cross-unit partnerships. </p>
+                <p class="footer__p">Efficiently plagiarize 24/365 action items and focused infomediaries.
+                    Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.</p>
+            </section>
+            <section class="footer__box">
+                <h3 class="footer__h">COMPANY</h3>
+                <ul class="footer__menu">
+                    <li> <a href="#333" class="footer__link">Home</a></li>
+                    <li> <a href="#333" class="footer__link">Shop</a></li>
+                    <li> <a href="#333" class="footer__link">About</a></li>
+                    <li> <a href="#333" class="footer__link">How It Works</a></li>
+                    <li> <a href="#333" class="footer__link">Contact</a></li>
+                </ul>
+            </section>
+            <section class="footer__box">
+                <h3 class="footer__h">INFORMATION</h3>
+                <ul class="footer__menu">
+                    <li> <a href="#333" class="footer__link">Tearms & Condition</a></li>
+                    <li> <a href="#333" class="footer__link">Privacy Policy</a></li>
+                    <li> <a href="#333" class="footer__link">How to Buy</a></li>
+                    <li> <a href="#333" class="footer__link">How to Sell</a></li>
+                    <li> <a href="#333" class="footer__link">Promotion</a></li>
+                </ul>
+            </section>
+            <section class="footer__box">
+                <h3 class="footer__h">SHOP CATEGORY</h3>
+                <ul class="footer__menu">
+                    <li> <a href="#333" class="footer__link">Men</a></li>
+                    <li> <a href="#333" class="footer__link">Women</a></li>
+                    <li> <a href="#333" class="footer__link">Child</a></li>
+                    <li> <a href="#333" class="footer__link">Apparel</a></li>
+                    <li> <a href="#333" class="footer__link">Brows All</a></li>
+                </ul>
+            </section>
         </div>
-        <footer class="footer__rights"></footer>
+        <footer class="footer__rights">
+            <p class="footer__copyright">© 2017 Brand All Rights Reserved.</p>
+            <div class="footer__socail-box">
+                <a href="social-lick" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="social-lick" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                <a href="social-lick" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="social-lick" class="footer__social-link"><i class="fab fa-pinterest-p"></i></a>
+                <a href="social-lick" class="footer__social-link"><i class="fab fa-google-plus-g"></i></a>
+            </div>
+        </footer>
     </footer>
 </body>
 </html>

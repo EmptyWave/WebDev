@@ -1,6 +1,8 @@
 *
   margin: 0
   padding: 0
+  outline: none
+  text-decoration: none
 
 @import "adaptive-var"
 
@@ -81,6 +83,7 @@ body
     font-size: 26px
     color: #595959
     line-height: 68px
+    transition: all 300ms ease
     &__call-menu
       &:active ~ .menu
         display: flex
@@ -90,10 +93,15 @@ body
     &__black
       background-color: #222222
       color: white
+      transition: all 300ms ease
       &:hover
+        transition: all 300ms ease
         background-color: white
         color: #595959
+    img
+      padding-top: 15px
     &:hover
+      transition: all 300ms ease
       box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.17)
 
 .header-nav-drop
@@ -126,8 +134,10 @@ body
     letter-spacing: 0.4px
     padding: 10px 0
     white-space: nowrap
+    transition: all 300ms ease
     &:hover
       color: $pink
+      transition: all 300ms ease
 
 .menu-list
   position: relative
@@ -146,6 +156,14 @@ body
     font-weight: 700
     text-transform: uppercase
     letter-spacing: 0.75px
+  &__link
+    width: 100%
+    height: 100%
+    display: block
+    transition: all 300ms ease
+    &:hover
+      transition: all 300ms ease
+      box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3)
   &__box
     display: grid
     grid-template-columns: 4fr 4fr 4fr
@@ -162,9 +180,7 @@ body
     &__long
       height: 180px
       margin-top: 32px
-      display: flex
-      align-items: center
-      justify-content: center
+
     &__man
       background: url("adaptive_img/category-man.jpg")
     &__women
@@ -172,6 +188,10 @@ body
     &__kids
       background: url("adaptive_img/category-kids.jpg")
     &__accesoryes
+      height: 100%
+      display: flex
+      align-items: center
+      justify-content: center
       background: url("adaptive_img/category-accesoryes.jpg")
     &__text-box
 
@@ -321,12 +341,11 @@ body
     transition: all 300ms ease
 
 
-.review
+.subscribe
   &__container
     display: flex
   &__left
     width: 50%
-    margin: 0 auto
   &__logo-box
     margin: 90px
     display: grid
@@ -346,10 +365,106 @@ body
     padding: 10px
   &__right
     width: 50%
+    text-align: center
+    margin-top: 150px
+  &__text-box
+    padding-left: 84px
+  &__h
+    color: #222224
+    font-weight: 400
+    font-size: 24px
+    letter-spacing: 0.6px
+  &__p
+    color: #222224
+    font-weight: 400
+    font-size: 14px
+    letter-spacing: 0.35px
+    line-height: 1.71
+  &__form
+    margin-top: 35px
+  &__input
+    width: 266px
+    height: 46px
+    border: 0
+    border-radius: 23px 0 0 23px
+    background-color: #e1e1e1
+    padding-left: 28px
+  &__button
+    position: absolute
+    border: 1px solid $pink
+    height: 46px
+    width: 97px
+    border-radius: 0 23px 23px 0
+    background-color: #f16d7f
+    color: #ffffff
+    font-size: 14px
+    font-weight: 400
+    &:hover
+      color: $pink
+      background-color: #ffffff
 
+.review
+  background: url("adaptive_img/review-back.jpg") no-repeat center
+  background-size: 100% 100%
+  height: 438px
+  position: relative
+  &__text
+    padding-top: 25px
+    color: #222224
+    font-size: 20px
+    font-style: italic
+    line-height: 1.9
+    letter-spacing: 0.5px
+  &__name
+    padding-top: 30px
+    color: $pink
+    font-size: 16px
+    font-weight: 700
+    letter-spacing: 0.4px
+    line-height: 1.63
+  &__location
+    color: #222224
+    font-size: 12px
+    font-weight: 300
+    letter-spacing: 0.3px
+    line-height: 1.17
+  &__slider
+    position: relative
+    width: 100%
+    height: 320px
+    margin: auto
+    overflow: hidden
+  &__slide
+    text-align: center
+    position: absolute
+    top: 15%
+    left: 19.5%
+    width: 60%
+  &__radio-box
+    width: 100%
+    height: 30px
+    display: flex
+    justify-content: center
+  &__radio-list
+    list-style: none
+    width: 100%
+    height: 5px
+    display: flex
+    justify-content: center
 
-
-
+  &__radio
+    margin-right: 20px
+    display: none
+    width: 38px
+    height: 4px
+    &__btn
+      white-space: normal
+      height: 100%
+      width: 100%
+      &::before
+        width: 38px
+        height: 4px
+        background-color: $pink
 
 
 
@@ -360,13 +475,88 @@ body
 
 .footer
   &__container
+    margin-top: 109px
     display: grid
-    grid-template-columns: 5fr 2fr 2fr 2fr 1fr
+    grid-template-columns: 5fr 2.3fr 2.3fr 2.3fr
     grid-template-rows: 2fr
     grid-column-gap: 20px
     grid-row-gap: 20px
     justify-items: stretch
     align-items: stretch
+  &__logo-box
+    display: flex
+    align-items: center
+  &__brand
+    padding-left: 13px
+    color: #3e3e40
+    font-size: 27px
+    font-weight: 400
+    line-height: 1.19
+    text-transform: uppercase
+    letter-spacing: 0.68px
+    span
+      color: $pink
+      font-weight: 700
+      letter-spacing: 0.68px
+  &__p
+    padding-top: 30px
+    padding-right: 30px
+    color: #898989
+    font-size: 14px
+    font-weight: 300
+    line-height: 1.71
+    letter-spacing: 0.35px
   &__rights
     height: 1.7%
     background-color: #e6e6e6
+  &__menu
+    list-style: none
+  &__h
+    padding-bottom: 30px
+    color: $pink
+    font-size: 18px
+    font-weight: 700
+    line-height: 1.44
+    text-transform: uppercase
+    letter-spacing: 0.45px
+  &__link
+    text-decoration: none
+    color: #898989
+    font-size: 16px
+    font-weight: 400
+    letter-spacing: 0.4px
+    line-height: 3
+    &:hover
+      color: $pink
+  &__rights
+    margin-top: 96px
+    background-color: #e6e6e6
+    display: flex
+    justify-content: space-around
+    padding-top: 10px
+    padding-bottom: 10px
+  &__copyright
+    color: #7a7a7a
+    font-size: 16px
+    font-weight: 400
+    line-height: 2.63
+    letter-spacing: 0.4px
+  &__socail-box
+    display: flex
+    padding-top: 5px
+  &__social-link
+    display: block
+    margin-right: 8px
+    width: 32px
+    height: 32px
+    text-align: center
+    background-color: #fff
+    outline: none
+    color: #b2b2b2
+    font-size: 16px
+    font-weight: 400
+    line-height: 32px
+    &:hover
+      color: #fff
+      background-color: #f16d7f
+
