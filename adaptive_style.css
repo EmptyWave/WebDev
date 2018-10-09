@@ -48,6 +48,8 @@ body {
     .header__p__pink {
       color: #f16d7f; }
 
+.header-nav__banner {
+  width: 100%; }
 .header-nav__input-search {
   display: none;
   background-color: #f1e4e6;
