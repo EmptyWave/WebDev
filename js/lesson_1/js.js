@@ -24,24 +24,21 @@ console.log(10 / +"2,5");      // из-за запятой строка прео
 
 // №5
 
-let TicketNum = prompt('Enter ticket number ( 6 symbols )');
-let NumPart1, NumPart2;
+let ticketNum = prompt('Enter ticket number ( 6 symbols )'),
+    numPart1 = parseInt(parseInt(ticketNum) / 1000),
+    numPart2 = ticketNum % 1000;
 
-console.log(`Номер вашего билета = ${TicketNum}`);
+console.log(`Номер вашего билета = ${ticketNum}`);
 
-NumPart1 = parseInt(parseInt(TicketNum) / 1000);
-NumPart2 = TicketNum % 1000;
+let sumPart1 = numPart1 % 10 + parseInt(numPart1 % 100 / 10) + parseInt(numPart1 % 1000 / 100),
+    sumPart2 = numPart2 % 10 + parseInt(numPart2 % 100 / 10) + parseInt(numPart2 % 1000 / 100);
 
-let SumPart1 = NumPart1 % 10 + parseInt(NumPart1 % 100 / 10) + parseInt(NumPart1 % 1000 / 100);
-let SumPart2 = NumPart2 % 10 + parseInt(NumPart2 % 100 / 10) + parseInt(NumPart2 % 1000 / 100);
+console.log(`Сумма первых трех цифр = ${sumPart1}`);
+console.log(`Сумма последних трех цифр = ${sumPart2}`);
 
-console.log(`Сумма первых трех цифр = ${SumPart1}`);
-console.log(`Сумма последних трех цифр = ${SumPart2}`);
-
-if (SumPart1 === SumPart2) {
+if (sumPart1 === sumPart2) {
     console.log('Вы обладатель счастливого билета!!!');
-}
-else {
+} else {
     console.log('В этот раз вам не повезло!');
 }
 
