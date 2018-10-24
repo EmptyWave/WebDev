@@ -25,8 +25,7 @@ getPyramid(20);
 function getPyramid(max) {
     let pyramid = '';
     for (let i = 0; i < max; i++) {
-        pyramid += 'x';
-        console.log(pyramid);
+        console.log(pyramid += 'x');
     }
 }
 
