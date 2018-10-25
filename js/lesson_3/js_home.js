@@ -31,15 +31,13 @@ function getPyramid(max) {
 
 // № 4
 
-for (let i = 2; i <= 1000; i++) {
+for (let i = 2; i <= 1000000; i++) {
     if (checkNum(i)) console.log(i);
 }
 
 function checkNum(num) {
-    let count = 0;
     for (let i = 2; i <= num/2; i++) {
-        if (num % i) continue;
-        if (++count > 1) return false;
+        if (!(num % i)) return false;
     }
     return true;
 }
