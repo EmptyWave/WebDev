@@ -16,7 +16,7 @@ do {
 
 // № 2
 
-for (let i = 0; i < 10; console.log(i), i++) {}
+for (let i = 0; i < 10; console.log(i++)) {}
 
 // № 3
 
@@ -31,23 +31,23 @@ function getPyramid(max) {
 
 // № 4
 
-for (let i = 0; i <= 100; i++) {
-    checkNum(i);
+for (let i = 2; i <= 1000; i++) {
+    if (checkNum(i)) console.log(i);
 }
 
 function checkNum(num) {
     let count = 0;
-    for (let i = 0; i <= 100; i++) {
-        if (num % i === 0) {
-            count++;
-        }
+    for (let i = 2; i <= num/2; i++) {
+        if (num % i) continue;
+        if (++count > 1) return false;
     }
-    return count === 2 ? console.log(num) : false;
+    return true;
 }
 
 // № 5
 
-const arr = [[2, 4, 6], [1, 5, 10], [7, 4, 1]];
+//const arr = [[2, 4, 6], [1, 5, 10], [7, 4, 1]];
+const arr = [[-2, -4, -62], [-1, -5, -10], [-7, -4, -1]];
 let maxIndex = 0;
 let maxArr = [];
 
@@ -55,7 +55,7 @@ arr.forEach(function (secArr) {
     maxArr.push(arrSum(secArr));
 });
 
-let max = arr[0][0];
+let max = maxArr[0];
 for (let i = 0; i < maxArr.length; i++) {
     if (maxArr[i] > max) {
         max = maxArr[i];
