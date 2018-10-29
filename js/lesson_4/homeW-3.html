@@ -9,46 +9,125 @@
 <script>
     "use strict";
 
+    let tasks = [];
+    tasks[0] = ['Какая буква является перевой в английском алфавите?','a','b','c','d','a'];
+    tasks[1] = ['Какая буква является второй в английском алфавите?','a','b','c','d','b'];
+    tasks[2] = ['Какая буква является третьей в английском алфавите?','a','b','c','d','c'];
+    tasks[3] = ['Какая буква является четвертой в английском алфавите?','a','b','c','d','d'];
+    tasks[4] = ['Какая буква является пятой в английском алфавите?','b','c','d','e','d'];
+
     /**
      * Объект с настройками игры.
-     * @property {int} rowsCount Количество строк в карте.
-     * @property {int} colsCount Количество колонок в карте.
-     * @property {int} startPositionX Начальная позиция игрока по X координате.
-     * @property {int} startPositionY Начальная позиция игрока по Y координате.
+     * @property {int} taskNumbers Количество вопросов.
      */
     const settings = {
-        rowsCount: 10,
-        colsCount: 10,
-        startPositionX: 0,
-        startPositionY: 0,
+        taskNumbers: 5,
+        answerVar: [['a','A','1'],['b','B','2'],['c','C','3'],['d','D','4']]
     };
 
-    /**
-     * Объект игрока, здесь будут все методы и свойства связанные с ним.
-     * @property {int} x Позиция по X-координате.
-     * @property {int} y Позиция по Y-координате.
-     */
-    const player = {
-        x: null,
-        y: null,
 
-        /**
-         * Инициализация игрока и его метоположения.
-         */
-        init(startX, startY) {
-            this.x = startX;
-            this.y = startY;
+    const task = {
+        settings,
+        number: null,
+        question: "",
+        answA: "",
+        answB: "",
+        answC: "",
+        answD: "",
+        rightAnsw: "",
+
+        getTask(){
+            let count = 0;
+            for (let i = 0; i <= this.settings.taskNumbers; i++){
+                for (let i = 0; i<=5; i++) {
+                    switch (i) {
+                        case 0:
+                            prompt(`Введите вопрос`);
+                            break;
+                        case 1:
+                            prompt(`Введите 1 вариант ответа`);
+                            break;
+                        case 2:
+                            prompt(`Введите 2 вариант ответа`);
+                            break;
+                        case 3:
+                            prompt(`Введите 3 вариант ответа`);
+                            break;
+                        case 4:
+                            prompt(`Введите 4 вариант ответа`);
+                            break;
+                        case 5:
+                            prompt(`Введите правильный вариант ответа`);
+                            break;
+                    }
+                }
+            }
+
         },
 
         /**
-         * Двигает игрока по переданным координатам
-         * @param {{x: int, y: int}} nextPos Переданные координаты
+         * Инициализация вопроса и его ответов.
          */
-        move(nextPos) {
+        init(task,count) {
+            this.number = count;
+            this.question = task[0];
+            this.answA = task[1];
+            this.answB = task[2];
+            this.answC = task[3];
+            this.answD = task[4];
+            this.rightAnsw = task[5];
+        },
 
-            // Определяем направление и обновляем местоположение игрока в зависимости от направления.
-            this.x = nextPos.x;
-            this.y = nextPos.y;
+        /**
+         * Выводим окно с вопросом, для получения варианта ответа
+         */
+        getAnswer(){
+          return prompt(`Вопрос:
+          ${this.question}.\nВыберите 1 из вариантов ответа:
+          A: ${this.answA}
+          B: ${this.answB}
+          C: ${this.answC}
+          D: ${this.answD}  `)
+        },
+
+        /**
+         * Проверяем соответствует ли переданный ответ заданному
+         * @param answ Переданый вариант ответа
+         * @returns {boolean} возвращаем True если переданный вариант верен
+         */
+        checkAnswer(answ){
+            switch (answ){
+                case 'a':
+                case 'A':
+                case '1':
+                    return this.settings.answerVar[0].includes(this.rightAnsw);
+                case 'b':
+                case 'B':
+                case '2':
+                    return this.settings.answerVar[1].includes(this.rightAnsw);
+                case 'c':
+                case 'C':
+                case '3':
+                    return this.settings.answerVar[2].includes(this.rightAnsw);
+                case 'd':
+                case 'D':
+                case '4':
+                    return this.settings.answerVar[3].includes(this.rightAnsw);
+            }
+            return false;
+        },
+
+        /**
+         * Сбрасываем вопрос
+         */
+        reset(){
+            this.number = null;
+            this.question = "";
+            this.answA = "";
+            this.answB = "";
+            this.answC = "";
+            this.answD = "";
+            this.rightAnsw = "";
         },
 
     };
@@ -59,87 +138,95 @@
      * @property {player} player Игрок, участвующий в игре.
      */
     const game = {
+        task,
         settings,
-        player,
+        taskCount: 0,
+        cash: 0,
 
         /**
          * Запускает игру.
          */
         run() {
-            // Инициализируем игрока, ставим его начальное местоположение
-            this.player.init(this.settings.startPositionX, this.settings.startPositionY);
-            // Бесконечный цикл
-            while (true) {
-                // Отображаем нашу игру.
-                this.render();
 
-                // Получаем направление от игрока.
-                const direction = this.getDirection();
+            if (confirm(`Вас приветствует игра - Кто хочет стать миллонером \nХотите начать игру?`)){
+                alert(`Правила игры:
+                Вам будет задан ряд вопросов, с вариантами ответов;
+                Чтобы дать ответ - введите литеру варианта или порядковый номер варианта;
+                Для выхода введите - 0;`)
+                // Бесконечный цикл
+                while (true) {
 
-                // Если игрок сказал что хочет выйти (набрал -1), значит выходим.
-                if (direction === -1) {
-                    alert('До свидания.');
-                    return;
-                }
-                // Получаем следующую позицию
-                const nextPos = this.player.getNextPos(direction);
-                // Двигаем игрока.
-                if (this.checkBorder(nextPos)) {
-                    this.player.move(nextPos);
-                }
-            }
-        },
-
-        /**
-         * Проверяем наличие границы перед началом движения
-         */
-        checkBorder(nextPos){
-            if (nextPos.x < 0) {
-                alert('Вы достигли левой границы, двигайтесь в другом направлдении');
-                return false;
-            }
-            if (nextPos.x > game.settings.colsCount - 1) {
-                alert('Вы достигли правой границы, двигайтесь в другом направлдении');
-                return false;
-            }
-            if (nextPos.y < 0) {
-                alert('Вы достигли верхней границы, двигайтесь в другом направлдении');
-                return false;
-            }
-            if (nextPos.y > game.settings.rowsCount - 1) {
-                alert('Вы достигли нижней границы, двигайтесь в другом направлдении');
-                return false;
-            }
-            return true;
-        },
-
-        /**
-         * Отображает игру в консоли.
-         */
-        render() {
-            // Сюда запишем все что надо отобразить.
-            let map = "";
-
-            // Цикл перебирает все строки, которые надо отобразить.
-            for (let row = 0; row < this.settings.rowsCount; row++) {
-                // В каждой строке отображаем для каждой колонки (x - клетка, o - игрок).
-                for (let col = 0; col < this.settings.colsCount; col++) {
-                    // Проверяем, если на данной позиции должен быть и игрок, отображаем игрока, если нет - клетку.
-                    if (this.player.y === row && this.player.x === col) {
-                        map += 'o ';
-                    } else {
-                        map += 'x ';
+                    // Инициализируем вопроса
+                    if (task.number !== this.taskCount){
+                        task.init(tasks[this.taskCount],this.taskCount)
                     }
-                }
-                // После того как отобразили всю строку делаем переход на следующую строку.
-                map += '\n';
-            }
 
-            // Чистим консоль.
-            console.clear();
-            // Выводим все что надо отобразить в игре.
-            console.log(map);
+                    // Спрашиваем ответ
+                    let answer = task.getAnswer();
+
+                    // Если игрок сказал что хочет выйти (набрал -1), значит выходим.
+                    if (answer === "0") {
+                        alert('До свидания.');
+                        return;
+                    }else if (!((answer>='a' && answer<='d') ||
+                                (answer>='A' && answer<='D') || (answer>='1' && answer<='4'))) {
+                        alert('Необходимо ввести ответ в символьном виде [a,b,c,d] или [A,B,C,D],' +
+                            ' так же можете ввести ответ в числовом варианте [1-4], для выхода введите 0.');
+                        continue;
+                    }
+
+                    // Проверяем введенный ответ
+                    if (task.checkAnswer(answer)){
+                        this.taskCount++;
+                        this.cash += 500;
+                        if (this.taskCount < this.settings.taskNumbers){
+                            alert(`Поздравляем, вы ответили правильно на вопрос № ${this.taskCount},
+ваш выигрыш составляет ${this.cash}!`);
+                        } else if (confirm(`Поздравляем, вы ответили правильно на все вопросы и заработали ${this.cash} рублей!
+Хотите сыграть еще раз?`)){
+                            this.reset();
+                        }
+                    }else if(confirm(`Вы дали не правильный ответ, игра закончена.
+Вы ответили правильно на ${this.taskCount} ${this.getDec(this.taskCount)} и заработали ${this.cash} рублей!.
+Хотите сыграть еще раз?`)){
+                        this.reset();
+                    }
+
+                }
+            }
         },
+
+        /**
+         * Сбрасываем состояние игры
+         */
+        reset(){
+          this.taskCount = 0;
+          this.cash = 0;
+          task.reset();
+        },
+
+        /**
+         * Выводим нужное сколнение слова для переданного счетчика
+         * @param count переданный счетчик
+         * @returns {string} Возвращает правильное склонение
+         */
+        getDec(count) {
+        if (parseInt(count / 10 % 10) === 1){
+            return 'вопросов';
+        } else {
+            switch (count % 10) {
+                case 1:
+                    return 'вопрос';
+                case 2:
+                case 3:
+                case 4:
+                    return 'вопроса';
+                default:
+                    return 'вопросов';
+            }
+        }
+    }
+
     };
 
     // Запускаем игру.
