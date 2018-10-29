@@ -10,59 +10,97 @@
     "use strict";
 
     let tasks = [];
-    tasks[0] = ['Какая буква является перевой в английском алфавите?','a','b','c','d','a'];
-    tasks[1] = ['Какая буква является второй в английском алфавите?','a','b','c','d','b'];
-    tasks[2] = ['Какая буква является третьей в английском алфавите?','a','b','c','d','c'];
-    tasks[3] = ['Какая буква является четвертой в английском алфавите?','a','b','c','d','d'];
-    tasks[4] = ['Какая буква является пятой в английском алфавите?','b','c','d','e','d'];
+    tasks[0] = {question:'Какая буква является перевой в английском алфавите?',
+        answerA:'a',
+        answerB:'b',
+        answerC:'c',
+        answerD:'d',
+        rightAnswer:'a'};
+    tasks[1] = {question:'Какая буква является второй в английском алфавите?',
+        answerA:'a',
+        answerB:'b',
+        answerC:'c',
+        answerD:'d',
+        rightAnswer:'b'};
+    tasks[2] = {question:'Какая буква является третьей в английском алфавите?',
+        answerA:'a',
+        answerB:'b',
+        answerC:'c',
+        answerD:'d',
+        rightAnswer:'c'};
+    tasks[3] = {question:'Какая буква является четвертой в английском алфавите?',
+        answerA:'a',
+        answerB:'b',
+        answerC:'c',
+        answerD:'d',
+        rightAnswer:'d'};
+    tasks[4] = {question:'Какая буква является пятой в английском алфавите?',
+        answerA:'b',
+        answerB:'c',
+        answerC:'d',
+        answerD:'e',
+        rightAnswer:'d'};
 
     /**
      * Объект с настройками игры.
      * @property {int} taskNumbers Количество вопросов.
      */
     const settings = {
+        tasks,
         taskNumbers: 5,
+        cashInc: 500,
+        keyWord: {
+            start: 'start',
+            rules: 'rules',
+            correctAnswer: 'correctAnswer',
+            rightAnswerN: 'rightAnswerN',
+            rightAnswerAll: 'rightAnswerAll',
+            notRightAnswer: 'notRightAnswer',
+            exit: 'exit',
+            exitCMD: '0',
+            newTaskCMD: '5',
+        },
         answerVar: [['a','A','1'],['b','B','2'],['c','C','3'],['d','D','4']]
     };
-
 
     const task = {
         settings,
         number: null,
         question: "",
-        answA: "",
-        answB: "",
-        answC: "",
-        answD: "",
-        rightAnsw: "",
+        answerA: "",
+        answerB: "",
+        answerC: "",
+        answerD: "",
+        rightAnswer: "",
 
+        /**
+         * Добавление нового вопроса
+         */
         getTask(){
-            let count = 0;
-            for (let i = 0; i <= this.settings.taskNumbers; i++){
-                for (let i = 0; i<=5; i++) {
-                    switch (i) {
-                        case 0:
-                            prompt(`Введите вопрос`);
-                            break;
-                        case 1:
-                            prompt(`Введите 1 вариант ответа`);
-                            break;
-                        case 2:
-                            prompt(`Введите 2 вариант ответа`);
-                            break;
-                        case 3:
-                            prompt(`Введите 3 вариант ответа`);
-                            break;
-                        case 4:
-                            prompt(`Введите 4 вариант ответа`);
-                            break;
-                        case 5:
-                            prompt(`Введите правильный вариант ответа`);
-                            break;
-                    }
+            let task = {};
+            for (let i = 0; i<=5; i++) {
+                switch (i) {
+                    case 0:
+                        task.question = prompt(`Введите вопрос`);
+                        break;
+                    case 1:
+                        task.answA = prompt(`Введите 1 вариант ответа`);
+                        break;
+                    case 2:
+                        task.answB = prompt(`Введите 2 вариант ответа`);
+                        break;
+                    case 3:
+                        task.answC = prompt(`Введите 3 вариант ответа`);
+                        break;
+                    case 4:
+                        task.answD = prompt(`Введите 4 вариант ответа`);
+                        break;
+                    case 5:
+                        task.rightAnsw = prompt(`Введите правильный вариант ответа`);
+                        break;
                 }
             }
-
+            return task;
         },
 
         /**
@@ -70,12 +108,12 @@
          */
         init(task,count) {
             this.number = count;
-            this.question = task[0];
-            this.answA = task[1];
-            this.answB = task[2];
-            this.answC = task[3];
-            this.answD = task[4];
-            this.rightAnsw = task[5];
+            this.question = task.question;
+            this.answerA = task.answerA;
+            this.answerB = task.answerB;
+            this.answerC = task.answerC;
+            this.answerD = task.answerD;
+            this.rightAnswer = task.rightAnswer;
         },
 
         /**
@@ -84,35 +122,35 @@
         getAnswer(){
           return prompt(`Вопрос:
           ${this.question}.\nВыберите 1 из вариантов ответа:
-          A: ${this.answA}
-          B: ${this.answB}
-          C: ${this.answC}
-          D: ${this.answD}  `)
+          A: ${this.answerA}
+          B: ${this.answerB}
+          C: ${this.answerC}
+          D: ${this.answerD}  `)
         },
 
         /**
          * Проверяем соответствует ли переданный ответ заданному
-         * @param answ Переданый вариант ответа
+         * @param answer Переданый вариант ответа
          * @returns {boolean} возвращаем True если переданный вариант верен
          */
-        checkAnswer(answ){
-            switch (answ){
+        checkAnswer(answer){
+            switch (answer){
                 case 'a':
                 case 'A':
                 case '1':
-                    return this.settings.answerVar[0].includes(this.rightAnsw);
+                    return this.settings.answerVar[0].includes(this.rightAnswer);
                 case 'b':
                 case 'B':
                 case '2':
-                    return this.settings.answerVar[1].includes(this.rightAnsw);
+                    return this.settings.answerVar[1].includes(this.rightAnswer);
                 case 'c':
                 case 'C':
                 case '3':
-                    return this.settings.answerVar[2].includes(this.rightAnsw);
+                    return this.settings.answerVar[2].includes(this.rightAnswer);
                 case 'd':
                 case 'D':
                 case '4':
-                    return this.settings.answerVar[3].includes(this.rightAnsw);
+                    return this.settings.answerVar[3].includes(this.rightAnswer);
             }
             return false;
         },
@@ -148,52 +186,102 @@
          */
         run() {
 
-            if (confirm(`Вас приветствует игра - Кто хочет стать миллонером \nХотите начать игру?`)){
-                alert(`Правила игры:
-                Вам будет задан ряд вопросов, с вариантами ответов;
-                Чтобы дать ответ - введите литеру варианта или порядковый номер варианта;
-                Для выхода введите - 0;`)
+            if (confirm(this.getAlertText(this.settings.keyWord.start))){
+                alert(this.getAlertText(this.settings.keyWord.rules));
                 // Бесконечный цикл
                 while (true) {
 
                     // Инициализируем вопроса
-                    if (task.number !== this.taskCount){
-                        task.init(tasks[this.taskCount],this.taskCount)
+                    if (this.task.number !== this.taskCount){
+                        this.task.init(this.settings.tasks[this.taskCount],this.taskCount)
                     }
 
                     // Спрашиваем ответ
-                    let answer = task.getAnswer();
+                    let answer = this.task.getAnswer();
 
-                    // Если игрок сказал что хочет выйти (набрал -1), значит выходим.
-                    if (answer === "0") {
-                        alert('До свидания.');
+                    // Если игрок сказал что хочет выйти (набрал 0), значит выходим.
+                    if (answer === this.settings.keyWord.exitCMD) {
+                        alert(this.getAlertText(this.settings.keyWord.exit));
                         return;
-                    }else if (!((answer>='a' && answer<='d') ||
-                                (answer>='A' && answer<='D') || (answer>='1' && answer<='4'))) {
-                        alert('Необходимо ввести ответ в символьном виде [a,b,c,d] или [A,B,C,D],' +
-                            ' так же можете ввести ответ в числовом варианте [1-4], для выхода введите 0.');
+                    } else if (answer === this.settings.keyWord.newTaskCMD) {
+                        this.settings.tasks.push(this.task.getTask());
+                        this.reset();
+                        continue;
+                    } else if (!this.answerIsCorrect(answer)) {
+                        alert(this.getAlertText(this.settings.keyWord.correctAnswer));
                         continue;
                     }
 
                     // Проверяем введенный ответ
                     if (task.checkAnswer(answer)){
                         this.taskCount++;
-                        this.cash += 500;
+                        this.cash += this.settings.cashInc;
                         if (this.taskCount < this.settings.taskNumbers){
-                            alert(`Поздравляем, вы ответили правильно на вопрос № ${this.taskCount},
-ваш выигрыш составляет ${this.cash}!`);
-                        } else if (confirm(`Поздравляем, вы ответили правильно на все вопросы и заработали ${this.cash} рублей!
-Хотите сыграть еще раз?`)){
+                            alert(this.getAlertText(this.settings.keyWord.rightAnswerN));
+                        } else if (confirm(this.getAlertText(this.settings.keyWord.rightAnswerAll))){
                             this.reset();
-                        }
-                    }else if(confirm(`Вы дали не правильный ответ, игра закончена.
-Вы ответили правильно на ${this.taskCount} ${this.getDec(this.taskCount)} и заработали ${this.cash} рублей!.
-Хотите сыграть еще раз?`)){
+                        } else return;
+                    }else if(confirm(this.getAlertText(this.settings.keyWord.notRightAnswer))){
                         this.reset();
-                    }
+                    } else return;
 
                 }
             }
+        },
+
+        /**
+         * Проверяем корректность ответа
+         */
+        answerIsCorrect(answer){
+          return ((answer >= 'a' && answer <= 'd') ||
+              (answer >= 'A' && answer <= 'D') ||
+              (answer >= '1' && answer <= '4'));
+        },
+
+        /**
+         * Формируем сообщени для всплывающих окон
+         */
+        getAlertText(key){
+            let alertText = '';
+            switch (key){
+                case 'start' :
+                    alertText += 'Вас приветствует игра - Кто хочет стать миллонером';
+                    alertText += '\nХотите начать игру?';
+                    break;
+                case 'exit' :
+                    alertText += 'До свидания.';
+                    break;
+                case 'rules' :
+                    alertText += 'Правила игры:';
+                    alertText += '\nВам будет задан ряд вопросов, с вариантами ответов;';
+                    alertText += '\nЧтобы дать ответ - введите литеру варианта или порядковый номер варианта;';
+                    alertText += '\nДля выхода введите - 0.';
+                    break;
+                case 'correctAnswer' :
+                    alertText += 'Необходимо ввести ответ в символьном виде [a,b,c,d] или [A,B,C,D],';
+                    alertText += ' так же можете ввести ответ в числовом варианте [1-4],';
+                    alertText += ' если хотите добавить свой вопрос, введите - 5, для выхода введите - 0.';
+                    break;
+                case 'rightAnswerN' :
+                    alertText += 'Поздравляем, вы ответили правильно на вопрос № ';
+                    alertText += this.taskCount + ', ';
+                    alertText += 'ваш выигрыш составляет ';
+                    alertText += this.cash + '!';
+                    break;
+                case 'rightAnswerAll' :
+                    alertText += 'Поздравляем, вы ответили правильно на все вопросы';
+                    alertText += ' и заработали ' + this.cash + ' рублей!';
+                    alertText += '\nХотите сыграть еще раз?';
+                    break;
+                case 'notRightAnswer' :
+                    alertText += 'Вы дали не правильный ответ, игра закончена.';
+                    alertText += '\nВы ответили правильно на ';
+                    alertText += this.taskCount + ' ' + this.getDec(this.taskCount);
+                    alertText += ' и заработали ' + this.cash + ' рублей!';
+                    alertText += '\nХотите сыграть еще раз?';
+                    break;
+            }
+            return alertText;
         },
 
         /**
@@ -202,12 +290,12 @@
         reset(){
           this.taskCount = 0;
           this.cash = 0;
-          task.reset();
+          this.task.reset();
         },
 
         /**
          * Выводим нужное сколнение слова для переданного счетчика
-         * @param count переданный счетчик
+         * @param {int} count переданный счетчик
          * @returns {string} Возвращает правильное склонение
          */
         getDec(count) {

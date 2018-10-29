@@ -45,7 +45,6 @@
          * @param {{x: int, y: int}} nextPos Переданные координаты
          */
         move(nextPos) {
-
             // Определяем направление и обновляем местоположение игрока в зависимости от направления.
             this.x = nextPos.x;
             this.y = nextPos.y;
@@ -141,7 +140,7 @@
                 alert('Вы достигли левой границы, двигайтесь в другом направлдении');
                 return false;
             }
-            if (nextPos.x > game.settings.colsCount - 1) {
+            if (nextPos.x > this.settings.colsCount - 1) {
                 alert('Вы достигли правой границы, двигайтесь в другом направлдении');
                 return false;
             }
@@ -149,7 +148,7 @@
                 alert('Вы достигли верхней границы, двигайтесь в другом направлдении');
                 return false;
             }
-            if (nextPos.y > game.settings.rowsCount - 1) {
+            if (nextPos.y > this.settings.rowsCount - 1) {
                 alert('Вы достигли нижней границы, двигайтесь в другом направлдении');
                 return false;
             }

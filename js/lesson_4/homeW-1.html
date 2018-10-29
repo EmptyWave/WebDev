@@ -14,20 +14,31 @@
         /**
          * Раскладывает по разрядам числа от 0 до 999
          * @param num Число ереданное для разлодение на разряды
-         * @returns Возвращает обект, состоящий из 3х цифр
+         * @returns {*} {firstDigit: number, secondDigit: number, thirdDigit: number} Возвращает обект, состоящий из 3х цифр
+         *
          * - firstDigit: number, единицы
          * - secondDigit: number, десятки
          * - thirdDigit: number, сотни
          */
         function getDec(num) {
-            const numDec = {
+            if (!Number.isInteger(num) || num < 0 || num > 999) {
+                console.log('error');
+                return {};
+            }
+            return {
                 firstDigit: num%10,
                 secondDigit: Math.floor(num%100/10),
                 thirdDigit: Math.floor(num/100),
             };
-            return numDec;
         }
 
     </script>
 </body>
 </html>
+
+/**
+*
+* @param num
+* @returns
+
+*/
