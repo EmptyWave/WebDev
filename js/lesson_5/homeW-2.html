@@ -28,6 +28,15 @@
 
         .boardNum{
             font: 400 30px "";
+            color: white;
+        }
+
+        .blackSide{
+            color: black;
+        }
+
+        .whiteSide{
+            color: #ffffff;
         }
     </style>
 </head>
@@ -44,9 +53,9 @@
         startDirection: 'right',
         stepsInSecond: 5,
         playerCellColor: '#AA3333',
-        emptyCellColor: '#EEEEEE',
-        blackCellColor: '#a1a1a1',
-        whiteCellColor: '#fff',
+        emptyCellColor: '#705335',
+        blackCellColor: '#5c5c5c',
+        whiteCellColor: '#b6b6b6',
         cellSize: 20,
         chessmanCode: {
             queen: '<i class="fas fa-chess-queen"></i>',
@@ -104,6 +113,8 @@
                     trElem.appendChild(cell);
                 }
             }
+            // Всем ячейкам ставим цвет пустых ячеек.
+            this.cellElements.forEach(cell => cell.style.backgroundColor = this.settings.emptyCellColor);
         },
 
         /**
@@ -132,7 +143,10 @@
                         rowEl.cells[col].classList.add('boardNum');
                         // Раскрашиваем оставшиеся клетки
                     } else {
-                        rowEl.cells[col].innerHTML += this.getChessman(row,col);
+                        if (this.isFigureZone(row)) {
+                            rowEl.cells[col].innerHTML += this.getChessman(row,col);
+                            rowEl.cells[col].classList.add(this.getSideColor(row));
+                        }
                         if (this.isCellBlack(row,col)) {
                             rowEl.cells[col].style.backgroundColor = this.settings.blackCellColor;
                         } else {
@@ -144,6 +158,13 @@
         },
 
         /**
+         * Проверяем место для расположения фигур
+         */
+        isFigureZone(row) {
+            return row <=2 || row >= 7;
+        },
+
+        /**
          * Проверяем нужно ли красить ячейку в черный
          */
         isCellBlack(row,col) {
@@ -151,10 +172,38 @@
         },
 
         /**
+         * проверяем ряд для ролевых фигур
+         */
+        isUsefulPiece(row){
+            return row === 1 || row === this.settings.rowsCount - 2;
+        },
+
+        /**
+         * проверяем ряд для пешек
+         */
+        isNotUsefulPiece(row){
+            return row === 2 || row === this.settings.rowsCount - 3;
+        },
+
+        /**
+         * Проверяем сторону для темных фигур
+         */
+        isBlackSide(row) {
+            return row <= 2;
+        },
+
+        /**
+         * Проверяем сторону для светлых фигур
+         */
+        isWhiteSide(row) {
+            return row >= 7;
+        },
+
+        /**
          * Выбираем фигуру для подстановки
          */
         getChessman(row,col) {
-            if (row === 1 || row === this.settings.rowsCount - 2) {
+            if (this.isUsefulPiece(row)) {
                 switch (col) {
                     case 1:
                     case 8:
@@ -170,9 +219,20 @@
                     case 5:
                         return settings.chessmanCode.queen;
                 }
-            } else if (row === 2 || row === this.settings.rowsCount - 3) {
+            } else if (this.isNotUsefulPiece(row)) {
                 return settings.chessmanCode.pawn;
             } else return "";
+        },
+
+        /**
+         * Подбираем сторону "силы"
+         */
+        getSideColor(row) {
+            if (this.isBlackSide(row)){
+                return 'blackSide';
+            } else if (this.isWhiteSide(row)) {
+                return 'whiteSide';
+            }
         },
 
 
