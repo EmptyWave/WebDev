@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcbca706-adda-4f1f-b38e-0f78b970da50" name="Default" comment="started working on the page - checout">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/lesson_5/homeW-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/lesson_5/homeW-2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/lesson_5/homeW-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/lesson_5/homeW-3.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,7 +16,7 @@
       <file leaf-file-name="js_lesson.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/lesson_5/js_lesson.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
+            <state relative-caret-position="527">
               <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
             </state>
           </provider>
@@ -27,7 +25,7 @@
       <file leaf-file-name="homeW-1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/lesson_5/homeW-1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="970">
+            <state relative-caret-position="2244">
               <caret line="132" selection-start-line="132" selection-end-line="132" />
             </state>
           </provider>
@@ -36,12 +34,8 @@
       <file leaf-file-name="homeW-2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/lesson_5/homeW-2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4167">
-              <caret line="232" column="47" lean-forward="true" selection-start-line="232" selection-start-column="47" selection-end-line="232" selection-end-column="47" />
-              <folding>
-                <element signature="e#888#1589#0" />
-                <element signature="e#1231#1582#0" />
-              </folding>
+            <state relative-caret-position="2822">
+              <caret line="246" column="7" selection-start-line="246" selection-start-column="7" selection-end-line="246" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -49,8 +43,8 @@
       <file leaf-file-name="homeW-3.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/lesson_5/homeW-3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+            <state relative-caret-position="1021">
+              <caret line="65" column="60" lean-forward="true" selection-start-line="65" selection-start-column="60" selection-end-line="65" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -122,8 +116,8 @@
         <option value="$PROJECT_DIR$/js/lesson_4/homeW-2.html" />
         <option value="$PROJECT_DIR$/js/lesson_4/homeW-3.html" />
         <option value="$PROJECT_DIR$/js/lesson_5/homeW-1.html" />
-        <option value="$PROJECT_DIR$/js/lesson_5/homeW-3.html" />
         <option value="$PROJECT_DIR$/js/lesson_5/homeW-2.html" />
+        <option value="$PROJECT_DIR$/js/lesson_5/homeW-3.html" />
       </list>
     </option>
   </component>
@@ -268,11 +262,12 @@
       <workItem from="1540833230148" duration="8134000" />
       <workItem from="1540972546455" duration="8534000" />
       <workItem from="1541003628307" duration="3806000" />
+      <workItem from="1541060494571" duration="7780000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203249000" />
+    <option name="totallyTimeSpent" value="211029000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -303,19 +298,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08802083" />
       <window_info anchor="right" x="139" y="73" width="479" height="976" id="Structure" order="4" show_stripe_button="false" side_tool="true" type="WINDOWED" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.21985815" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.32928064" />
@@ -547,7 +542,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/lesson_5/js_lesson.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
+        <state relative-caret-position="527">
           <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
         </state>
       </provider>
@@ -594,35 +589,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/загрузки Chrome/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="200" selection-start-line="200" selection-end-line="215" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://E:/загрузки Chrome/game.js" />
     <entry file="file://$PROJECT_DIR$/js/lesson_5/homeW-1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="970">
+        <state relative-caret-position="2244">
           <caret line="132" selection-start-line="132" selection-end-line="132" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/lesson_5/homeW-2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4167">
-          <caret line="232" column="47" lean-forward="true" selection-start-line="232" selection-start-column="47" selection-end-line="232" selection-end-column="47" />
-          <folding>
-            <element signature="e#888#1589#0" />
-            <element signature="e#1231#1582#0" />
-          </folding>
+        <state relative-caret-position="2822">
+          <caret line="246" column="7" selection-start-line="246" selection-start-column="7" selection-end-line="246" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/lesson_5/homeW-3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        <state relative-caret-position="1021">
+          <caret line="65" column="60" lean-forward="true" selection-start-line="65" selection-start-column="60" selection-end-line="65" selection-end-column="60" />
         </state>
       </provider>
     </entry>
