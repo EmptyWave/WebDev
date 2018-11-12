@@ -46,8 +46,7 @@ td.cell{
 }
 
 .info{
-    position: absolute;
-    top: 25%;
-    right: 35%;
+    text-align: center;
+    padding-top: 25px;
     color: white;
 }
