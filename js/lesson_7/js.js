@@ -11,7 +11,7 @@ const settings = {
   rowsCount: 21,
   colsCount: 21,
   speed: 2,
-  winFoodCount: 50,
+  winFoodCount: 100,
 };
 
 /**
@@ -166,7 +166,7 @@ const map = {
     // Отображаем еду.
     foodCell.classList.add('food');
     // Добавляем элемент ячейки еды в массив занятых точек на карте.
-    this.usedCells.push(foodPoint);
+    this.usedCells.push(foodCell);
   },
 };
 
@@ -219,12 +219,14 @@ const snake = {
 
   /**
    * Двигает змейку на один шаг.
+   * @param colsCount : int максимальное кол-во столбцов
+   * @param rowsCount : int максимальное кол-во строк
    */
-  makeStep() {
+  makeStep(colsCount, rowsCount) {
     // Записываем направление движения, которое сейчас произойдет как направление прошлого шага.
     this.lastStepDirection = this.direction;
     // Вставляем следующую точку в начало массива.
-    this.body.unshift(this.getNextStepHeadPoint());
+    this.body.unshift(this.getNextStepHeadPoint(rowsCount, colsCount));
     // Удаляем последний лишний элемент.
     this.body.pop();
   },
@@ -245,21 +247,23 @@ const snake = {
 
   /**
    * Отдает точку, где будет голова змейки если она сделает шаг.
+   * @param maxX : int максимальное значение по х,
+   * @param maxY : int максимальное значение по y
    * @returns {{x: int, y: int}} Следующая точка куда придет змейка сделав шаг.
    */
-  getNextStepHeadPoint() {
+  getNextStepHeadPoint(maxX, maxY) {
     // Получаем в отдельную переменную голову змейки.
     const firstPoint = this.body[0];
     // Возвращаем точку, где окажется голова змейки в зависимости от направления.
     switch (this.direction) {
       case 'up':
-        return {x: firstPoint.x, y: firstPoint.y - 1};
+        return {x: firstPoint.x, y: firstPoint.y - 1 < 0 ? maxY - 1 : firstPoint.y - 1};
       case 'right':
-        return {x: firstPoint.x + 1, y: firstPoint.y};
+        return {x: firstPoint.x + 1 === maxX ? 0 : firstPoint.x + 1, y: firstPoint.y};
       case 'down':
-        return {x: firstPoint.x, y: firstPoint.y + 1};
+        return {x: firstPoint.x, y: firstPoint.y + 1 === maxY ? 0 : firstPoint.y + 1};
       case 'left':
-        return {x: firstPoint.x - 1, y: firstPoint.y};
+        return {x: firstPoint.x - 1 < 0 ? maxX - 1 : firstPoint.x - 1, y: firstPoint.y};
     }
   },
 
@@ -372,6 +376,39 @@ const game = {
   food,
   status,
   tickInterval: null,
+  score: {
+    value: null,
+    el: null,
+
+    /**
+     * Инициализация счета
+     */
+    init() {
+      this.value = 0;
+      this.el = document.getElementById('score');
+    },
+
+    /**
+     * Сбрасываем счет
+     */
+    reset() {
+      this.value = 0;
+    },
+
+    /**
+     * Увеличиваем счет
+     */
+    add() {
+      this.value++;
+    },
+
+    /**
+     * Отображаем счет
+     */
+    render() {
+      this.el.textContent = `${this.value}`;
+    }
+  },
 
   /**
    * Инициализация игры.
@@ -391,6 +428,8 @@ const game = {
     }
     // Инициализируем карту.
     this.map.init(this.config.getRowsCount(), this.config.getColsCount());
+    // Выставляем начальный счет
+    this.score.init();
     // Устанавливаем обработчики событий.
     this.setEventHandlers();
     // Ставим игру в начальное положение.
@@ -407,6 +446,8 @@ const game = {
     this.snake.init(this.getStartSnakeBody(), 'up');
     // Ставим еду на карту в случайную пустую ячейку.
     this.food.setCoordinates(this.getRandomFreeCoordinates());
+    // Сбрасываем счет
+    this.score.reset();
     // Отображаем все что нужно для игры.
     this.render();
   },
@@ -456,7 +497,9 @@ const game = {
       return this.finish();
     }
     // Если следующий шаг будет на еду, то заходим в if.
-    if (this.food.isOnPoint(this.snake.getNextStepHeadPoint())) {
+    if (this.food.isOnPoint(this.snake.getNextStepHeadPoint(this.config.getColsCount(), this.config.getRowsCount()))) {
+      // Увеличиваем счет
+      this.score.add();
       // Прибавляем к змейке ячейку.
       this.snake.growUp();
       // Ставим еду в свободную ячейку.
@@ -467,7 +510,7 @@ const game = {
       }
     }
     // Перемещаем змейку.
-    this.snake.makeStep();
+    this.snake.makeStep(this.config.getColsCount(), this.config.getRowsCount());
     // Отрисовываем что получилось после шага.
     this.render();
   },
@@ -514,6 +557,7 @@ const game = {
    */
   render() {
     this.map.render(this.snake.getBody(), this.food.getCoordinates());
+    this.score.render();
   },
 
   /**
@@ -627,13 +671,13 @@ const game = {
    */
   canMakeStep() {
     // Получаем следующую точку головы змейки в соответствии с текущим направлением.
-    const nextHeadPoint = this.snake.getNextStepHeadPoint();
+    const nextHeadPoint = this.snake.getNextStepHeadPoint(this.config.getColsCount(), this.config.getRowsCount());
     // Змейка может сделать шаг если следующая точка не на теле змейки и точка внутри игрового поля.
-    return !this.snake.isOnPoint(nextHeadPoint) &&
+    return !this.snake.isOnPoint(nextHeadPoint) /*&&
       nextHeadPoint.x < this.config.getColsCount() &&
       nextHeadPoint.y < this.config.getRowsCount() &&
       nextHeadPoint.x >= 0 &&
-      nextHeadPoint.y >= 0;
+      nextHeadPoint.y >= 0*/;
   },
 };
 
