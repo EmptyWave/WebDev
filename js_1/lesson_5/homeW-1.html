@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        tr {
+            width: 50px;
+            height: 50px;
+        }
+
+        td {
+            border: 1px solid #888888;
+            width: 50px;
+            height: 50px;
+            background-color: #EEEEEE;
+            text-align: center;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+<table id="game"></table>
+<script>
+    "use strict";
+
+    const settings = {
+        rowsCount: 10,
+        colsCount: 10,
+        startPositionX: 0,
+        startPositionY: 0,
+        startDirection: 'right',
+        stepsInSecond: 5,
+        playerCellColor: '#AA3333',
+        emptyCellColor: '#EEEEEE',
+        blackCellColor: '#a1a1a1',
+        whiteCellColor: '#fff',
+        cellSize: 20,
+    };
+
+
+    const game = {
+        settings,
+        cellElements: null,
+        containerElement: null,
+
+        /**
+         * Запускаем игру
+         */
+        run() {
+            this.init();
+        },
+
+        /**
+         * Подготавливаемся к игре
+         */
+        init() {
+            this.containerElement = document.getElementById('game');
+            this.initCells();
+            this.initCellsContent();
+        },
+
+        /**
+         * Инициирует ячейки в игре.
+         */
+        initCells() {
+            // Очищаем контейнер для игры.
+            this.containerElement.innerHTML = '';
+            // Массив ячеек пока пуст.
+            this.cellElements = [];
+            // Пробегаемся в цикле столько раз, какое количество строк в игре.
+            for (let row = 0; row < this.settings.rowsCount; row++) {
+                // Создаем новую строку.
+                const trElem = document.createElement('tr');
+                // Добавляем строку в контейнер с игрой.
+                this.containerElement.appendChild(trElem);
+                // В каждой строке пробегаемся по циклу столько раз, сколько у нас колонок.
+                for (let col = 0; col < this.settings.colsCount; col++) {
+                    // Создаем ячейку.
+                    const cell = document.createElement('td');
+                    // Записываем ячейку в массив ячеек.
+                    this.cellElements.push(cell);
+                    // Добавляем ячейку в текущую строку.
+                    trElem.appendChild(cell);
+                }
+            }
+        },
+
+        /**
+         * Заполняем шахматное поле
+         */
+        initCellsContent() {
+            // Пробегаемся в цикле столько раз, какое количество строк в игре.
+            for (let row = 0; row < this.settings.rowsCount; row++) {
+                // Получаем текущую строку
+                const rowEl = document.querySelector(`tr:nth-child(${row + 1})`);
+                // В каждой строке пробегаемся по циклу столько раз, сколько у нас колонок.
+                for (let col = 0; col < this.settings.colsCount; col++) {
+                    // Для первоой и последней строки
+                    if (row === 0 || row === this.settings.rowsCount - 1) {
+                        // Не в первой или последней колонке
+                        if (col !== 0 && col !== this.settings.colsCount - 1) {
+                            // Записываем в ячейку буквенное обозначение
+                            rowEl.cells[col].textContent = String.fromCharCode(64 + col);
+                        }
+                    // Для певрой и последней колонки
+                    } else if (col === 0 || col === this.settings.colsCount - 1) {
+                        // Записываем в клетку цифровое обозначение
+                        rowEl.cells[col].textContent = row;
+                    // Раскрашиваем оставшиеся клетки
+                    } else if ((row % 2 && !(col % 2)) || (!(row % 2) && col % 2)) {
+                        rowEl.cells[col].style.backgroundColor = this.settings.blackCellColor;
+                    } else {
+                        rowEl.cells[col].style.backgroundColor = this.settings.whiteCellColor;
+                    }
+                }
+            }
+        },
+
+
+    };
+
+    window.addEventListener('load', () => game.run());
+
+
+</script>
+</body>
+</html>

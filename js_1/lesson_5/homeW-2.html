@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <style>
+        *{
+            font: 900 24px "Font Awesome 5 Free"
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        tr {
+            width: 50px;
+            height: 50px;
+        }
+
+        td {
+            border: 1px solid #888888;
+            width: 50px;
+            height: 50px;
+            background-color: #EEEEEE;
+            text-align: center;
+        }
+
+        .boardNum{
+            font: 400 30px "";
+            color: white;
+        }
+
+        .blackSide{
+            color: black;
+        }
+
+        .whiteSide{
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<table id="game"></table>
+<script>
+    "use strict";
+
+    const settings = {
+        rowsCount: 10,
+        colsCount: 10,
+        startPositionX: 0,
+        startPositionY: 0,
+        startDirection: 'right',
+        stepsInSecond: 5,
+        playerCellColor: '#AA3333',
+        emptyCellColor: '#705335',
+        blackCellColor: '#5c5c5c',
+        whiteCellColor: '#b6b6b6',
+        cellSize: 20,
+        chessmanCode: {
+            queen: '<i class="fas fa-chess-queen"></i>',
+            king: '<i class="fas fa-chess-king"></i>',
+            rook: '<i class="fas fa-chess-rook"></i>',
+            knight: '<i class="fas fa-chess-knight"></i>',
+            bishop: '<i class="fas fa-chess-bishop"></i>',
+            pawn: '<i class="fas fa-chess-pawn"></i>',
+        },
+    };
+
+
+    const game = {
+        settings,
+        cellElements: null,
+        containerElement: null,
+
+        /**
+         * Запускаем игру
+         */
+        run() {
+            this.init();
+        },
+
+        /**
+         * Подготавливаемся к игре
+         */
+        init() {
+            this.containerElement = document.getElementById('game');
+            this.initCells();
+            this.initChessBoard();
+        },
+
+        /**
+         * Инициирует ячейки в игре.
+         */
+        initCells() {
+            // Очищаем контейнер для игры.
+            this.containerElement.innerHTML = '';
+            // Массив ячеек пока пуст.
+            this.cellElements = [];
+            // Пробегаемся в цикле столько раз, какое количество строк в игре.
+            for (let row = 0; row < this.settings.rowsCount; row++) {
+                // Создаем новую строку.
+                const trElem = document.createElement('tr');
+                // Добавляем строку в контейнер с игрой.
+                this.containerElement.appendChild(trElem);
+                // В каждой строке пробегаемся по циклу столько раз, сколько у нас колонок.
+                for (let col = 0; col < this.settings.colsCount; col++) {
+                    // Создаем ячейку.
+                    const cell = document.createElement('td');
+                    // Записываем ячейку в массив ячеек.
+                    this.cellElements.push(cell);
+                    // Добавляем ячейку в текущую строку.
+                    trElem.appendChild(cell);
+                }
+            }
+            // Всем ячейкам ставим цвет пустых ячеек.
+            this.cellElements.forEach(cell => cell.style.backgroundColor = this.settings.emptyCellColor);
+        },
+
+        /**
+         * Заполняем шахматное поле
+         */
+        initChessBoard() {
+            // Пробегаемся в цикле столько раз, какое количество строк в игре.
+            for (let row = 0; row < this.settings.rowsCount; row++) {
+                // Получаем текущую строку
+                const rowEl = document.querySelector(`tr:nth-child(${row + 1})`);
+                console.dir(rowEl);
+                // В каждой строке пробегаемся по циклу столько раз, сколько у нас колонок.
+                for (let col = 0; col < this.settings.colsCount; col++) {
+                    // Для первоой и последней строки
+                    if (row === 0 || row === this.settings.rowsCount - 1) {
+                        // Не в первой или последней колонке
+                        if (col !== 0 && col !== this.settings.colsCount - 1) {
+                            // Записываем в ячейку буквенное обозначение
+                            rowEl.cells[col].textContent = String.fromCharCode(64 + col);
+                            rowEl.cells[col].classList.add('boardNum');
+                        }
+                        // Для певрой и последней колонки
+                    } else if (col === 0 || col === this.settings.colsCount - 1) {
+                        // Записываем в клетку цифровое обозначение
+                        rowEl.cells[col].textContent = `${this.settings.colsCount - 1 - row}`;
+                        rowEl.cells[col].classList.add('boardNum');
+                        // Раскрашиваем оставшиеся клетки
+                    } else {
+                        if (this.isFigureZone(row)) {
+                            rowEl.cells[col].innerHTML += this.getChessman(row,col);
+                            rowEl.cells[col].classList.add(this.getSideColor(row));
+                        }
+                        if (this.isCellBlack(row,col)) {
+                            rowEl.cells[col].style.backgroundColor = this.settings.blackCellColor;
+                        } else {
+                            rowEl.cells[col].style.backgroundColor = this.settings.whiteCellColor;
+                        }
+                    }
+                }
+            }
+        },
+
+        /**
+         * Проверяем место для расположения фигур
+         */
+        isFigureZone(row) {
+            return row <=2 || row >= 7;
+        },
+
+        /**
+         * Проверяем нужно ли красить ячейку в черный
+         */
+        isCellBlack(row,col) {
+            return (row % 2 && !(col % 2)) || (!(row % 2) && col % 2);
+        },
+
+        /**
+         * проверяем ряд для ролевых фигур
+         */
+        isUsefulPiece(row){
+            return row === 1 || row === this.settings.rowsCount - 2;
+        },
+
+        /**
+         * проверяем ряд для пешек
+         */
+        isNotUsefulPiece(row){
+            return row === 2 || row === this.settings.rowsCount - 3;
+        },
+
+        /**
+         * Проверяем сторону для темных фигур
+         */
+        isBlackSide(row) {
+            return row <= 2;
+        },
+
+        /**
+         * Проверяем сторону для светлых фигур
+         */
+        isWhiteSide(row) {
+            return row >= 7;
+        },
+
+        /**
+         * Выбираем фигуру для подстановки
+         */
+        getChessman(row,col) {
+            if (this.isUsefulPiece(row)) {
+                switch (col) {
+                    case 1:
+                    case 8:
+                        return settings.chessmanCode.rook;
+                    case 2:
+                    case 7:
+                        return settings.chessmanCode.knight;
+                    case 3:
+                    case 6:
+                        return settings.chessmanCode.bishop;
+                    case 4:
+                        return settings.chessmanCode.king;
+                    case 5:
+                        return settings.chessmanCode.queen;
+                }
+            } else if (this.isNotUsefulPiece(row)) {
+                return settings.chessmanCode.pawn;
+            } else return "";
+        },
+
+        /**
+         * Подбираем сторону "силы"
+         */
+        getSideColor(row) {
+            if (this.isBlackSide(row)){
+                return 'blackSide';
+            } else if (this.isWhiteSide(row)) {
+                return 'whiteSide';
+            }
+        },
+
+
+
+    };
+
+    window.addEventListener('load', () => game.run());
+
+
+</script>
+</body>
+</html>

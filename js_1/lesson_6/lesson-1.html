@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #game {
+            width: 150px;
+            margin: 50px auto;
+        }
+        #game td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table id="game"></table>
+<script>
+    "use strict";
+
+    /*const obj1 = {};
+
+    const obj2 = {
+        newProperty: 'Hello',
+    };
+
+    Object.assign(obj1,obj2);*/
+
+    const  ticTakToe = {
+        gameTableElement: null,
+        status: 'playing',
+        mapValues: [
+            ['', '', ''],
+            ['', '', ''],
+            ['', '', ''],
+        ],
+        phase: 'X',
+
+        init() {
+            this.gameTableElement = document.getElementById('game');
+            this.renderMap();
+            this.initEventHandlers();
+        },
+
+        renderMap() {
+            for (let row = 0; row < 3; row++) {
+                const tr = document.createElement('tr');
+                this.gameTableElement.appendChild(tr);
+                for (let col = 0; col < 3; col++) {
+                    const td = document.createElement('td');
+                    td.dataset.row = row.toString();
+                    td.dataset.col = col.toString();
+                    tr.appendChild(td);
+
+                }
+            }
+        },
+
+        initEventHandlers() {
+            this.gameTableElement.addEventListener('click', event => this.cellClickHandler(event));
+        },
+
+        cellClickHandler(event) {
+            const row = +event.target.dataset.row;
+            const col = +event.target.dataset.col;
+
+            if (!this.isStatusPlaying() || !this.isClickByCell(event) || !this.isCellEmpty(row, col)) {
+                return;
+            }
+
+            event.target.textContent = this.phase;
+            this.mapValues[row][col] = this.phase;
+
+            if (this.hasWon()) {
+                this.sayWonPhrase();
+                this.setStatusStopped();
+            }
+
+            this.togglePhase();
+        },
+
+        isClickByCell(event) {
+            return event.target.tagName === 'TD';
+        },
+
+        togglePhase() {
+            this.phase = this.phase === 'X' ? '0' : 'X';
+        },
+
+        isCellEmpty(row, col) {
+            return this.mapValues[row][col] === '';
+        },
+
+        hasWon() {
+            return this.isLineWon({x: 0, y: 0}, {x: 1, y: 0}, {x: 2, y: 0}) ||
+                this.isLineWon({x: 0, y: 1}, {x: 1, y: 1}, {x: 2, y: 1}) ||
+                this.isLineWon({x: 0, y: 2}, {x: 1, y: 2}, {x: 2, y: 2}) ||
+
+                this.isLineWon({x: 0, y: 0}, {x: 0, y: 1}, {x: 0, y: 2}) ||
+                this.isLineWon({x: 1, y: 0}, {x: 1, y: 1}, {x: 1, y: 2}) ||
+                this.isLineWon({x: 2, y: 0}, {x: 2, y: 1}, {x: 2, y: 2}) ||
+
+                this.isLineWon({x: 0, y: 0}, {x: 1, y: 1}, {x: 2, y: 2}) ||
+                this.isLineWon({x: 0, y: 2}, {x: 1, y: 1}, {x: 2, y: 0});
+        },
+
+        isLineWon(a, b, c) {
+            const value = this.mapValues[a.y][a.x] + this.mapValues[b.y][b.x] + this.mapValues[c.y][c.x];
+            return value === 'XXX' || value === '000';
+        },
+
+        isStatusPlaying() {
+            return this.status === 'playing';
+        },
+
+        setStatusStopped() {
+            this.status = 'stopped';
+        },
+
+        sayWonPhrase() {
+            const figure = this.phase ==='X' ? 'Крестики' : 'Нолики' ;
+            alert(`Победили ${figure}`);
+        }
+
+    };
+
+    window.onload = () => ticTakToe.init();
+
+</script>
+</body>
+</html>
