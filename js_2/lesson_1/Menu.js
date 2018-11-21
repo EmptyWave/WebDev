@@ -1,6 +1,7 @@
 class Menu {
-    constructor(id, className, items){
+    constructor(id, buttonId, className, items){
         this.id = id;
+        this.buttonId = buttonId;
         this.className = className;
         this.items = items;
     }
@@ -10,8 +11,16 @@ class Menu {
             if(this.items[i] instanceof MenuItem) {
                 result += this.items[i].render()
             }
+            if(this.items[i] instanceof SubMenu) {
+                result += this.items[i].render()
+            }
         }
         result += `</ul>`;
         return result
+    }
+    remove(){
+        let element = document.getElementById(this.id);
+        let button = document.getElementById(this.buttonId);
+        button.addEventListener('click',() => element.remove());
     }
 }
