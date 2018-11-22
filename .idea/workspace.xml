@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcbca706-adda-4f1f-b38e-0f78b970da50" name="Default" comment="started working on the page - checout">
-      <change afterPath="$PROJECT_DIR$/js_2/lesson_1/SubMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js_2/lesson_1/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/js_2/lesson_1/Menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_2/lesson_1/SubMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/js_2/lesson_1/SubMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js_2/lesson_1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_2/lesson_1/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,17 +21,17 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js_2/lesson_1/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="476">
+              <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Menu.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Menu.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js_2/lesson_1/Menu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+            <state relative-caret-position="459">
+              <caret line="27" column="40" lean-forward="true" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -40,17 +39,17 @@
       <file leaf-file-name="SubMenu.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js_2/lesson_1/SubMenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+            <state relative-caret-position="289">
+              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuItem.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MenuItem.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js_2/lesson_1/MenuItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+            <state relative-caret-position="136">
+              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -135,8 +134,8 @@
         <option value="$PROJECT_DIR$/js/test/test1.html" />
         <option value="$PROJECT_DIR$/js_2/lesson_1/MenuItem.js" />
         <option value="$PROJECT_DIR$/js_2/lesson_1/SubMenu.js" />
-        <option value="$PROJECT_DIR$/js_2/lesson_1/Menu.js" />
         <option value="$PROJECT_DIR$/js_2/lesson_1/index.html" />
+        <option value="$PROJECT_DIR$/js_2/lesson_1/Menu.js" />
       </list>
     </option>
   </component>
@@ -300,11 +299,12 @@
       <workItem from="1542031210325" duration="337000" />
       <workItem from="1542383963753" duration="1015000" />
       <workItem from="1542782227109" duration="7987000" />
+      <workItem from="1542873963267" duration="1181000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247802000" />
+    <option name="totallyTimeSpent" value="248983000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -335,19 +335,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08802083" />
       <window_info anchor="right" x="139" y="73" width="479" height="976" id="Structure" order="4" show_stripe_button="false" side_tool="true" type="WINDOWED" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.21985815" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.32928064" />
@@ -374,55 +374,13 @@
     <entry file="file://$PROJECT_DIR$/js/lesson_2/js.js" />
     <entry file="file://$PROJECT_DIR$/js/lesson_2/js_lesson.js" />
     <entry file="file://$PROJECT_DIR$/js/lesson_2/index.html" />
-    <entry file="file://$PROJECT_DIR$/js/lesson_3/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lesson_4/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lesson_4/js_lesson.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
-          <caret line="106" column="17" selection-start-line="106" selection-start-column="17" selection-end-line="106" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lesson_3/js_lesson.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="70" column="34" lean-forward="true" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lesson_3/js_home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="41" lean-forward="true" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lesson_2/js_home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3887">
-          <caret line="169" column="19" lean-forward="true" selection-start-line="169" selection-start-column="19" selection-end-line="169" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lesson_4/homeW-2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
-          <caret line="197" column="45" selection-start-line="197" selection-start-column="45" selection-end-line="197" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lesson_3/index.html" />
+    <entry file="file://$PROJECT_DIR$/js/lesson_4/index.html" />
+    <entry file="file://$PROJECT_DIR$/js/lesson_4/js_lesson.js" />
+    <entry file="file://$PROJECT_DIR$/js/lesson_3/js_lesson.js" />
+    <entry file="file://$PROJECT_DIR$/js/lesson_3/js_home.js" />
+    <entry file="file://$PROJECT_DIR$/js/lesson_2/js_home.js" />
+    <entry file="file://$PROJECT_DIR$/js/lesson_4/homeW-2.html" />
     <entry file="file://$PROJECT_DIR$/_variables.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -433,13 +391,7 @@
     <entry file="file://$PROJECT_DIR$/_adaptive-var.sass">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/lesson_5/lesson.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lesson_5/lesson.html" />
     <entry file="file://$PROJECT_DIR$/adaptive_style.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -483,93 +435,27 @@
       </provider>
     </entry>
     <entry file="file://E:/загрузки Chrome/game.js" />
-    <entry file="file://$PROJECT_DIR$/js/lesson_5/homeW-3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="90" column="7" selection-start-line="90" selection-start-column="7" selection-end-line="90" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lesson_4/homeW-3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="698">
-          <caret line="225" column="34" lean-forward="true" selection-start-line="225" selection-start-column="34" selection-end-line="225" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lesson_5/homeW-3.html" />
+    <entry file="file://$PROJECT_DIR$/js/lesson_4/homeW-3.html" />
     <entry file="file://$PROJECT_DIR$/../homework/assets/tictaktoe/js.js" />
     <entry file="file://$PROJECT_DIR$/../homework/assets/tictaktoe/index.html" />
     <entry file="file://$PROJECT_DIR$/js/lesson_6/homeW-1" />
-    <entry file="file://$PROJECT_DIR$/js/lesson_5/homeW-2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="112" column="45" selection-start-line="108" selection-start-column="20" selection-end-line="112" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lesson_5/homeW-2.html" />
     <entry file="file://$PROJECT_DIR$/js/lesson_6/lesson-1.html" />
     <entry file="file://$PROJECT_DIR$/../homework/assets/gallery/index.html" />
     <entry file="file://$PROJECT_DIR$/../homework/assets/gallery/js.js" />
-    <entry file="file://$PROJECT_DIR$/js/lesson_5/game.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lesson_5/game.html" />
     <entry file="file://$PROJECT_DIR$/js/lesson_6/homeW-1.html" />
     <entry file="file://$PROJECT_DIR$/js/lesson_6/homeW-3.html" />
     <entry file="file://$PROJECT_DIR$/js/lesson_6/homeW-4.html" />
-    <entry file="file://$PROJECT_DIR$/js/lesson_5/homeW-1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="120" column="17" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lesson_5/js_lesson.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="53" column="22" lean-forward="true" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lesson_7/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lesson_7/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lesson_7/js.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8772">
-          <caret line="516" selection-start-line="516" selection-end-line="516" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lesson_5/homeW-1.html" />
+    <entry file="file://$PROJECT_DIR$/js/lesson_5/js_lesson.js" />
+    <entry file="file://$PROJECT_DIR$/js/lesson_7/style.css" />
+    <entry file="file://$PROJECT_DIR$/js/lesson_7/index.html" />
+    <entry file="file://$PROJECT_DIR$/js/lesson_7/js.js" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.html" />
-    <entry file="file://$PROJECT_DIR$/js/lesson_8/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="88" column="7" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lesson_4/homeW-1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lesson_8/index.html" />
+    <entry file="file://$PROJECT_DIR$/js/lesson_4/homeW-1.html" />
     <entry file="file://$PROJECT_DIR$/js/test/test1.html" />
     <entry file="file://$PROJECT_DIR$/js_1/lesson_7/index.html">
       <provider selected="true" editor-type-id="text-editor" />
@@ -595,31 +481,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_2/lesson_1/Menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js_2/lesson_1/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js_2/lesson_1/SubMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+        <state relative-caret-position="476">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js_2/lesson_1/MenuItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+        <state relative-caret-position="136">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_2/lesson_1/SubMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_2/lesson_1/Menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="40" lean-forward="true" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
         </state>
       </provider>
     </entry>

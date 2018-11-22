@@ -1,7 +1,6 @@
 class Menu {
-    constructor(id, buttonId, className, items){
+    constructor(id, className, items){
         this.id = id;
-        this.buttonId = buttonId;
         this.className = className;
         this.items = items;
     }
@@ -16,11 +15,19 @@ class Menu {
             }
         }
         result += `</ul>`;
+        result += `<input type="button" id="delete_${this.id}" value="delete menu">`;
         return result
     }
     remove(){
         let element = document.getElementById(this.id);
-        let button = document.getElementById(this.buttonId);
+        let button = document.getElementById(`delete_${this.id}`);
         button.addEventListener('click',() => element.remove());
+        for (let i = 0; i < this.items.length; i++){
+            if(this.items[i] instanceof SubMenu) {
+              document
+                .getElementById(`delete_${this.items[i].id}`)
+                .addEventListener('click',() => document.getElementById(this.items[i].id).remove());
+            }
+        }
     }
 }

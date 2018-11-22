@@ -1,6 +1,6 @@
 class SubMenu extends Menu{
-  constructor(id, buttonId, className, subHref, subName, items){
-    super(id, buttonId, className, items);
+  constructor(id, className, subHref, subName, items){
+    super(id, className, items);
     this.subHref = subHref;
     this.subName = subName;
   }
@@ -10,5 +10,9 @@ class SubMenu extends Menu{
     result +=  super.render();
     result += `</li>`;
     return result
+  }
+
+  remove(){
+    super.remove()
   }
 }

@@ -6,7 +6,6 @@
 </head>
 <body>
 <div id="menu-block"></div>
-<input type="button" id="delete" value="delete menu">
 <script src="lesson1.js"></script>
 <script src="MenuItem.js"></script>
 <script src="Menu.js"></script>
@@ -16,11 +15,11 @@
         // DOM ready
         let menuBlock = document.getElementById('menu-block');
 
-        let menu = new Menu('my', 'delete', 'my', [
+        let menu = new Menu('my', 'my', [
             new MenuItem('/', 'Home'),
             new MenuItem('/blog', 'Blog'),
             new MenuItem('/services', 'Services'),
-            new SubMenu('me', 'delete', 'me', '/someSub', 'SubMenu',[
+            new SubMenu('me', 'me', '/someSub', 'SubMenu',[
                   new MenuItem('/', 'Home'),
                   new MenuItem('/blog', 'Blog'),
                   new MenuItem('/services', 'Services')
