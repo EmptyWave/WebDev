@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcbca706-adda-4f1f-b38e-0f78b970da50" name="Default" comment="started working on the page - checout">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_1/lesson_6/homeW-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_1/lesson_6/homeW-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_2/lesson_2/ajax.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_2/lesson_2/ajax.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_2/lesson_2/gallery.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_2/lesson_2/3/gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/js_2/lesson_2/3/gallery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_2/lesson_2/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_2/lesson_2/3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_2/lesson_2/3/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/js_2/lesson_2/3/settings.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,28 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="homeW-3.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js_2/lesson_2/2/homeW-3.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js_2/lesson_2/3/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="77" column="6" lean-forward="true" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="e#135#415#0" />
-                <element signature="e#447#685#0" />
-                <element signature="e#717#853#0" />
-                <element signature="e#884#1084#0" />
-                <element signature="e#1115#1316#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homeW-3.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_1/lesson_6/homeW-3.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="88" column="56" selection-start-line="88" selection-start-column="56" selection-end-line="88" selection-end-column="56" />
+            <state relative-caret-position="391">
+              <caret line="80" column="24" lean-forward="true" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
               </folding>
@@ -48,20 +30,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gallery.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_2/lesson_2/2/gallery.json">
+      <file leaf-file-name="gallery.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js_2/lesson_2/3/gallery.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="65" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
+            <state relative-caret-position="459">
+              <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_2/lesson_2/2/settings.json">
+      <file leaf-file-name="settings.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js_2/lesson_2/3/settings.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+            <state relative-caret-position="255">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -71,15 +53,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gallery.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_2/lesson_2/2/gallery.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2125">
-              <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -121,9 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/_checout.sass" />
-        <option value="$PROJECT_DIR$/checkout.html" />
-        <option value="$PROJECT_DIR$/_shopping_cart.sass" />
         <option value="$PROJECT_DIR$/adaptive_style.sass" />
         <option value="$PROJECT_DIR$/index_adaptive.html" />
         <option value="$PROJECT_DIR$/_adaptive-var.sass" />
@@ -172,6 +142,9 @@
         <option value="$PROJECT_DIR$/js_2/lesson_2/2/package.json" />
         <option value="$PROJECT_DIR$/js_2/lesson_2/2/settings.json" />
         <option value="$PROJECT_DIR$/js_2/lesson_2/2/homeW-3.html" />
+        <option value="$PROJECT_DIR$/js_2/lesson_2/3/index.html" />
+        <option value="$PROJECT_DIR$/js_2/lesson_2/3/settings.json" />
+        <option value="$PROJECT_DIR$/js_2/lesson_2/3/gallery.js" />
       </list>
     </option>
   </component>
@@ -201,6 +174,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -241,13 +215,12 @@
               <item name="WebDev" type="462c0819:PsiDirectoryNode" />
               <item name="js_2" type="462c0819:PsiDirectoryNode" />
               <item name="lesson_2" type="462c0819:PsiDirectoryNode" />
-              <item name="2" type="462c0819:PsiDirectoryNode" />
+              <item name="3" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -358,11 +331,12 @@
       <workItem from="1542873963267" duration="1181000" />
       <workItem from="1543165062898" duration="7019000" />
       <workItem from="1543220309022" duration="8615000" />
+      <workItem from="1543242337232" duration="1389000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="264617000" />
+    <option name="totallyTimeSpent" value="266006000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -393,19 +367,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08802083" />
       <window_info anchor="right" x="139" y="73" width="479" height="976" id="Structure" order="4" show_stripe_button="false" side_tool="true" type="WINDOWED" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.21985815" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.32928064" />
@@ -428,27 +402,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index_adaptive.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="78" column="10" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="872">
-          <caret line="354" column="40" selection-start-line="354" selection-start-column="40" selection-end-line="354" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shopping-cart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="895">
-          <caret line="440" column="61" selection-start-line="440" selection-start-column="61" selection-end-line="440" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/single-page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9108">
@@ -513,13 +466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_2/lesson_2/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js_2/lesson_2/promise.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -527,20 +473,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_2/lesson_2/gallery.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js_2/lesson_2/gallery.json" />
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="169" column="32" selection-start-line="169" selection-start-column="32" selection-end-line="169" selection-end-column="32" />
-          <folding>
-            <element signature="n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -548,12 +485,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1819">
           <caret line="107" column="18" lean-forward="true" selection-start-line="107" selection-start-column="18" selection-end-line="107" selection-end-column="18" />
-          <folding>
-            <element signature="e#5936#9229#0" />
-            <element signature="e#9346#10065#0" />
-            <element signature="e#10152#10867#0" />
-            <element signature="e#11174#20635#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -582,15 +513,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_2/lesson_2/2/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js_2/lesson_2/2/tsconfig.json" />
     <entry file="file://$PROJECT_DIR$/js_2/lesson_1/Menu.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -605,20 +531,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_2/lesson_2/2/settings">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js_2/lesson_2/2/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="63" lean-forward="true" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js_2/lesson_2/2/settings" />
+    <entry file="file://$PROJECT_DIR$/js_2/lesson_2/2/package.json" />
     <entry file="file://$PROJECT_DIR$/js_2/lesson_2/2/gallery.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -629,32 +543,58 @@
     <entry file="file://$PROJECT_DIR$/js_2/lesson_2/2/settings.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js_1/lesson_6/homeW-3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="88" column="56" selection-start-line="88" selection-start-column="56" selection-end-line="88" selection-end-column="56" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-          </folding>
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js_2/lesson_2/2/homeW-3.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="77" column="6" lean-forward="true" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
+          <caret line="77" column="6" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="e#135#415#0" />
-            <element signature="e#447#685#0" />
-            <element signature="e#717#853#0" />
-            <element signature="e#884#1084#0" />
-            <element signature="e#1115#1316#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_2/lesson_2/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_1/lesson_6/homeW-3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="76" column="56" selection-start-line="76" selection-start-column="56" selection-end-line="76" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_2/lesson_2/3/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="80" column="24" lean-forward="true" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_2/lesson_2/3/gallery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_2/lesson_2/3/settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>

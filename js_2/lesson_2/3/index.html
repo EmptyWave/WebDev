@@ -70,41 +70,37 @@
   //------------------------------------------------------------------------------------------------------------------
   // JS-2 Task №3
 
-  let settings = {};
+
+
   fetch('settings.json')
     .then(result => {
       console.log(result);
       return result.json();
     })
     .then(data => {
+      let settings = {};
       data.forEach(function (el) {
         for (let key in el) {
           settings[key] = `${el[key]}`;
         }
-      })});
-
-  let gallery = new myNewGallery(settings);
-
-  let myGallery = document.getElementById('gallery');
-  fetch('gallery.json')
-    .then(result => {
-      console.log(result);
-      return result.json();
+      })
+      return settings;
     })
-    .then(data => {
-      data.forEach(function (el) {
-          const img = document.createElement('img');
-          for (let key in el) {
-            img.setAttribute(key, el[key]);
-          }
-          myGallery.appendChild(img);
-        }
-      );
-    });
+    .then(settings => {
+      let gallery = new myNewGallery(settings);
+      gallery.init();
+    })
+
+
+
+
+  /*let gallery = new myNewGallery(settings);
+  gallery.render();*/
+
 
 
   // Инициализируем нашу галерею при загрузке страницы.
-  window.onload = () => gallery.init({previewSelector: '.galleryPreviewsContainer'});
+/*  window.onload = () => gallery.init();*/
 
 </script>
 </body>

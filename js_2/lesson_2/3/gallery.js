@@ -5,18 +5,31 @@ class myNewGallery {
 
   /**
    * Инициализирует галерею, ставит обработчик события.
-   * @param {Object} userSettings Объект настроек для галереи.
    */
-  init(userSettings = {}) {
-    // Записываем настройки, которые передал пользователь в наши настройки.
-    Object.assign(this.settings, userSettings);
-
+  init() {
     // Находим элемент, где будут превью картинок и ставим обработчик на этот элемент,
     // при клике на этот элемент вызовем функцию containerClickHandler в нашем объекте
     // gallery и передадим туда событие MouseEvent, которое случилось.
     document
       .querySelector(this.settings.previewSelector)
       .addEventListener('click', event => this.containerClickHandler(event));
+
+    let myGallery = document.getElementById(this.settings.blockToOpenGallery);
+    fetch(this.settings.openedGalleryLinks)
+      .then(result => {
+        console.log(result);
+        return result.json();
+      })
+      .then(data => {
+        data.forEach(function (el) {
+            const img = document.createElement('img');
+            for (let key in el) {
+              img.setAttribute(key, el[key]);
+            }
+            myGallery.appendChild(img);
+          }
+        );
+      });
   }
 
   /**
