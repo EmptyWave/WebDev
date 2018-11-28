@@ -34,7 +34,7 @@ class FormValidator{
         el.classList.add(this.settings.errorClassName);
       }
     }
-    if (errorFields.length > 0) this._massageOnError();
+    if (errorFields.length > 0) this._massageOnError(errorFields);
     else this._massageOnSuccess();
   }
   _valueIsValid(value,key){
