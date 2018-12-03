@@ -10,7 +10,10 @@ Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="a
     .form-wrap {
       margin: auto;
       padding: 20px;
-      max-width: 800px
+      max-width: 800px;
+    }
+    .city-drop{
+      max-height: 200px;
     }
 
     .input__ok {
@@ -21,6 +24,7 @@ Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="a
       border: 1px solid red;
     }
   </style>
+  <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
 </head>
 <body>
 <div class="form-wrap">
@@ -35,8 +39,7 @@ Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="a
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
-        <select name="City" class="form-control form-select">
-        </select>
+        <input type="text" name="city" class="form-control form-city" placeholder="City">
       </div>
       <div class="form-group col-md-6">
         <input type="email" name="email" class="form-control" placeholder="Email">
@@ -52,6 +55,7 @@ Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="a
 </div>
 <script src="Validator.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
 <script>
   "use strict";
 
@@ -61,6 +65,7 @@ Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="a
       phone: /\+\d{1}\((\d{3})\)\d{3}\-\d{4}/,
       email: /\w+\S*(@)\w+(\.)\w+/,
       text: /.+/g,
+      city: /.+/g,
     },
     errorClassName: 'input__err',
     successClassName: 'input__ok',
@@ -72,16 +77,25 @@ Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="a
     let forValidator = new FormValidator(settings);
     $('button').on('click', () => forValidator.check(inputs));
 
-    let $citySelect = $('.form-select');
+    const citySource = [];
     $.ajax({
       url: 'russiaCity.json',
       type: 'GET',
       dataType: 'json',
       success: (data) => {
         for (let country of data){
-          let $option = $(`<option value="${country.city}">${country.city}</option>`);
-          $citySelect.append($option);
+          citySource.push(country.city);
         }
+        $('.form-city').autocomplete({
+          //source: citySource,
+          source: function(request, response) {
+            let results = $.ui.autocomplete.filter(citySource, request.term);
+            response(results.slice(0, 5));
+          },
+          minLength: 3,
+          zIndex: 9999,
+          delay: 500,
+        });
       },
       error: (error) => {
         console.log(error);
