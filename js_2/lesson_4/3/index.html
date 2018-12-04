@@ -74,8 +74,20 @@ Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="a
   $(document).ready(() => {
     const inputs = {};
     $('input').each((index,item) => inputs[item.name] = item);
-    let forValidator = new FormValidator(settings);
-    $('button').on('click', () => forValidator.check(inputs));
+    let formValidator = new FormValidator(settings);
+    $('button').on('click', () => formValidator.check(inputs));
+    /*let $cityInput = $('.form-city');
+    $cityInput.on('keypress', () => {
+      let searchedCitys = [];
+      if ($cityInput[0].value.length>=2) {
+        citySource.forEach((city) => {
+          if (city.toLowerCase().indexOf($cityInput[0].value.toLowerCase()) !== -1) {
+            searchedCitys.push(city);
+          }
+        });
+        console.log(searchedCitys);
+      }
+    });*/
 
     const citySource = [];
     $.ajax({
@@ -100,7 +112,8 @@ Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="a
       error: (error) => {
         console.log(error);
       }
-    })
+    });
+    console.log(citySource);
   });
 
 </script>
