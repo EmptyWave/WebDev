@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fcbca706-adda-4f1f-b38e-0f78b970da50" name="Default" comment="started working on the page - checout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_2/lesson_5/Cart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_2/lesson_5/Product.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_2/lesson_5/Review.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_2/lesson_5/cart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_2/lesson_5/feedback.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_2/lesson_5/getCart.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_2/lesson_5/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_2/lesson_5/jquery-3.3.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_2/lesson_5/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_2/lesson_5/review.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_2/lesson_5/2/Review.js" beforeDir="false" afterPath="$PROJECT_DIR$/js_2/lesson_5/2/Review.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,8 +20,8 @@
       <file leaf-file-name="review.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js_2/lesson_5/2/review.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="79" column="35" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
+            <state relative-caret-position="542">
+              <caret line="91" column="41" selection-start-line="91" selection-start-column="41" selection-end-line="91" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
               </folding>
@@ -38,16 +29,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cart.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cart.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js_2/lesson_5/1/cart.html">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="Review.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Review.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js_2/lesson_5/2/Review.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+            <state relative-caret-position="493">
+              <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -353,11 +344,12 @@
       <workItem from="1544042702714" duration="4125000" />
       <workItem from="1544079044084" duration="13801000" />
       <workItem from="1544096402054" duration="91000" />
+      <workItem from="1544107957622" duration="596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="326957000" />
+    <option name="totallyTimeSpent" value="327553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -607,13 +599,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_2/lesson_5/2/feedback.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js_2/lesson_5/2/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -621,25 +606,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_2/lesson_5/2/Review.js">
+    <entry file="file://$PROJECT_DIR$/js_2/lesson_5/1/cart.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_2/lesson_5/2/feedback.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        <state relative-caret-position="306">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js_2/lesson_5/2/review.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="79" column="35" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
+        <state relative-caret-position="542">
+          <caret line="91" column="41" selection-start-line="91" selection-start-column="41" selection-end-line="91" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_2/lesson_5/1/cart.html">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/js_2/lesson_5/2/Review.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

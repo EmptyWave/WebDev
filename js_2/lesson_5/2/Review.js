@@ -16,8 +16,15 @@ class Reviews {
           //this.reviews.push(review);
           this._update(review);
         }});
-    $(`.${this.settings.addReviewBtnClass}`).click(() => {
-      this._addReview($('#author')[0].value,$('#review')[0].value)
+    $(`.${this.settings.addReviewBtnClass}`).click((e) => {
+      e.preventDefault();
+      if ($('#author')[0].value !== "" && $('#review')[0].value !== ""){
+        this._addReview($('#author')[0].value,$('#review')[0].value);
+        $('#author')[0].value = "";
+        $('#review')[0].value = "";
+      } else{
+        alert('Error, something went wrong!');
+      }
     })
   }
   /*_render(reviews = this.reviews) {
@@ -26,7 +33,6 @@ class Reviews {
     }
   }*/
   _addReview(author, text) {
-    if (author !== "" && text !== ""){
       let review = {
         id: ++this.reviewCount,
         author: author,
@@ -35,9 +41,6 @@ class Reviews {
       };
       //this.reviews.push(review);
       this._update(review);
-    } else{
-      alert('Error, something went wrong!');
-    }
   }
 
   _remove(el) {
