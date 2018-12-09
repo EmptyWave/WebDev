@@ -3,7 +3,6 @@ let sections;
 
 $('document').ready(function () {
   setCurrentSection();
-  setSectionIndicator(1);
   $('.navigation').click(function () {
     if (this.id == "nav-left") {
       if (currentSection != 1) {
@@ -53,18 +52,6 @@ function scrollToSection(section) {
   } else {
     $('.list').animate({left: '-='+width}, "slow", setCurrentSection);
   }
-  setSectionIndicator(section);
 }
 
-function setSectionIndicator(section) {
-  $('.sections').html('');
-  for (var i = 1; i <= sections; i++) {
-    if (i == section) circleClass = 'fa fa-circle';
-    else circleClass = 'fa fa-circle-thin';
-    $('.sections').html($('.sections').html() + '<i class="'+circleClass+' indicator" data-id="'+i+'" aria-hidden="true"></i>');
-  }
-  $('.indicator').click(function() {
-    scrollToSection($(this).attr('data-id'));
-  });
-}
 
