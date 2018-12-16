@@ -1,10 +1,12 @@
 class Product {
-    constructor(id, title, price, img = 'https://placehold.it/200x150', container = '#products'){
+    constructor(id, title, price, img = 'https://placehold.it/200x150',
+                container = '#products', product_img = 'https://placehold.it/72x85'){
         this.id = id;
         this.title = title;
         this.price = price;
         this.img = img;
         this.container = container;
+        this.product_img = product_img;
         this._render();
     }
     _render(){
