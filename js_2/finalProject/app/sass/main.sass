@@ -152,6 +152,9 @@ body
   height: 542px
   width: 560px
   margin-bottom: 20px
+  &:hover
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.17)
+    transition: all 300ms ease
 
 
 .smal-news
@@ -159,7 +162,9 @@ body
   width: 560px
   margin-bottom: 20px
   background-color: #dadad2
-
+  &:hover
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.17)
+    transition: all 300ms ease
 
 .news-column2
   padding-left: 20px
@@ -303,8 +308,9 @@ body
   &__hide-box
     position: absolute
     top: 0
+    left: 0
     width: 100%
-    height: 100%
+    height: 99%
     background-color: #000
     opacity: 0
   &__cart-box-text
@@ -481,6 +487,20 @@ body
 
 .subscribe
   height: 438px
+  &__container
+    position: absolute
+    display: inline-flex
+  &__button
+    position: absolute
+    border: 0
+    height: 46px
+    width: 104px
+    border-radius: 0 23px 23px 0
+    background-color: #f16d7f
+    color: #ffffff
+    font-size: 14px
+    font-weight: 400
+    outline: none
 
 
 .subscribe-img
@@ -504,10 +524,6 @@ body
   height: 30%
   width: 390px
 
-
-.subscribe-container
-  position: absolute
-  display: inline-flex
 
 .review-box-text
   padding-top: 6px
@@ -1318,8 +1334,13 @@ body
 .cart-icon
   position: relative
   padding: 21px 17px
+  border-radius: 5px
+  &:hover
+    transition: all 300ms ease
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.17)
 
 .cart-box:hover .cart-list-container
+  transition: all 300ms ease
   display: block
 
 .cart-box
@@ -1339,6 +1360,7 @@ body
   transition: all 1000ms ease
   align-items: center
   justify-content: center
+  text-decoration: none
   &:hover
     -moz-transform: rotate(360deg)
     -webkit-transform: rotate(360deg)

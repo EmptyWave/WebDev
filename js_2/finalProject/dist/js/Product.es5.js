@@ -10,8 +10,9 @@ var Product =
 /*#__PURE__*/
 function () {
   function Product(id, title, price) {
-    var img = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'https://placehold.it/200x150';
+    var img = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'https://placehold.it/263x284';
     var container = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '#products';
+    var product_img = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 'https://placehold.it/72x85';
 
     _classCallCheck(this, Product);
 
@@ -20,6 +21,7 @@ function () {
     this.price = price;
     this.img = img;
     this.container = container;
+    this.product_img = product_img;
 
     this._render();
   }
@@ -28,33 +30,36 @@ function () {
     key: "_render",
     value: function _render() {
       var $wrapper = $('<div/>', {
-        class: 'product'
-      }); // let $wrapper1 = $(`<div class="product"></div>`);
-
+        class: 'item-container item-hide-container'
+      });
+      var $imgBox = $('<div/>', {
+        class: 'product__img-box'
+      });
       var $img = $('<img/>', {
-        src: this.img
+        src: this.img,
+        alt: this.title
       });
-      var $desc = $('<div/>', {
-        class: 'desc'
-      });
-      var $name = $('<p/>', {
-        text: this.title
-      });
-      var $price = $("<p>\u0426\u0435\u043D\u0430: <span class=\"product-price\">".concat(this.price, "</span> \u0440\u0443\u0431.</p>"));
-      var $buyBtn = $('<button/>', {
-        class: 'buyBtn',
-        text: 'Купить',
+      var $buyBtn = $('<a/>', {
+        class: 'product__cart-box-text buyBtn',
+        href: "#add_".concat(this.id),
         'data-id': this.id,
         'data-price': this.price,
-        'data-title': this.title
-      }); // $buyBtn.click()
-      // Создаем структуру товара (верстку)
+        'data-title': this.title,
+        'data-img': this.product_img
+      });
+      var $name = $('<p/>', {
+        class: 'item-name',
+        text: this.title
+      });
+      var $price = $("<p class=\"item-price\">$".concat(this.price, "</p>")); // Создаем структуру товара (верстку)
 
-      $img.appendTo($wrapper);
-      $name.appendTo($desc);
-      $price.appendTo($desc);
-      $buyBtn.appendTo($desc);
-      $desc.appendTo($wrapper);
+      $img.appendTo($imgBox);
+      $imgBox.append($("<a href=\"single-page.html\" class=\"product__hide-box\"></a>"));
+      $buyBtn.html("<i class=\"fas fa-shopping-cart\"></i> Add to Cart");
+      $buyBtn.appendTo($imgBox);
+      $imgBox.appendTo($wrapper);
+      $name.appendTo($wrapper);
+      $price.appendTo($wrapper);
       $(this.container).append($wrapper);
     }
   }]);

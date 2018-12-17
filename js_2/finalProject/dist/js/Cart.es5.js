@@ -31,16 +31,25 @@ function () {
       var $cartItemsDiv = $('<div/>', {
         class: 'cart-items-wrap'
       });
-      var $totalProducts = $('<div/>', {
+      /*let $totalProducts = $('<div/>', {
         class: 'cart-summary sum-amount'
-      });
+      });*/
+
       var $totalPrice = $('<div/>', {
-        class: 'cart-summary sum-price'
+        class: 'cart-price'
+      });
+      var $buttonsBox = $('<div/>', {
+        class: 'cart-buttons-box'
       });
       $(this.container).text('Корзина');
-      $cartItemsDiv.appendTo($(this.container));
-      $totalProducts.appendTo($(this.container));
+      $cartItemsDiv.appendTo($(this.container)); //$totalProducts.appendTo($(this.container));
+
+      $totalPrice.append($("<p>TOTAL</p>"));
+      $totalPrice.append($("<p class=\"sum-price\"></p>"));
       $totalPrice.appendTo($(this.container));
+      $buttonsBox.append($("<a class=\"button-site checkout-button\" href=\"checkout.html\">Checkout</a>"));
+      $buttonsBox.append($("<a class=\"drop-cart-button\" href=\"shopping-cart.html\">Go to cart</a>"));
+      $buttonsBox.appendTo($(this.container));
     }
   }, {
     key: "_init",
@@ -49,47 +58,84 @@ function () {
 
       this._render();
 
-      fetch(source).then(function (result) {
-        return result.json();
-      }).then(function (data) {
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
+      if (!localStorage.getItem('mycart')) {
+        fetch(source).then(function (result) {
+          return result.json();
+        }).then(function (data) {
+          var _iteratorNormalCompletion = true;
+          var _didIteratorError = false;
+          var _iteratorError = undefined;
+
+          try {
+            for (var _iterator = data.contents[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+              var product = _step.value;
+
+              _this.cartItems.push(product);
+
+              _this._renderItem(product);
+            }
+          } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion && _iterator.return != null) {
+                _iterator.return();
+              }
+            } finally {
+              if (_didIteratorError) {
+                throw _iteratorError;
+              }
+            }
+          }
+
+          _this.countGoods = data.countGoods;
+          _this.amount = data.amount;
+          localStorage.setItem('mycart', JSON.stringify(_this.cartItems));
+          localStorage.setItem('countGoods', _this.countGoods);
+          localStorage.setItem('amount', _this.amount);
+
+          _this._renderSum();
+        });
+      } else {
+        this.cartItems = JSON.parse(localStorage.getItem('mycart'));
+        var _iteratorNormalCompletion2 = true;
+        var _didIteratorError2 = false;
+        var _iteratorError2 = undefined;
 
         try {
-          for (var _iterator = data.contents[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var product = _step.value;
+          for (var _iterator2 = this.cartItems[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+            var product = _step2.value;
 
-            _this.cartItems.push(product);
-
-            _this._renderItem(product);
+            this._renderItem(product);
           }
         } catch (err) {
-          _didIteratorError = true;
-          _iteratorError = err;
+          _didIteratorError2 = true;
+          _iteratorError2 = err;
         } finally {
           try {
-            if (!_iteratorNormalCompletion && _iterator.return != null) {
-              _iterator.return();
+            if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
+              _iterator2.return();
             }
           } finally {
-            if (_didIteratorError) {
-              throw _iteratorError;
+            if (_didIteratorError2) {
+              throw _iteratorError2;
             }
           }
         }
 
-        _this.countGoods = data.countGoods;
-        _this.amount = data.amount;
+        this.countGoods = JSON.parse(localStorage.getItem('countGoods'));
+        this.amount = JSON.parse(localStorage.getItem('amount'));
 
-        _this._renderSum();
-      });
+        this._renderSum();
+      }
     }
   }, {
     key: "_renderSum",
     value: function _renderSum() {
-      $('.sum-amount').text("\u0412\u0441\u0435\u0433\u043E \u0442\u043E\u0432\u0430\u0440\u043E\u0432 \u0432 \u043A\u043E\u0440\u0437\u0438\u043D\u0435: ".concat(this.countGoods));
-      $('.sum-price').text("\u041E\u0431\u0449\u0430\u044F \u0441\u0443\u043C\u043C\u0430: ".concat(this.amount, " \u0440\u0443\u0431"));
+      //$('.sum-amount').text(`Всего товаров в корзине: ${this.countGoods}`);
+      $('.sum-price').text("$".concat(this.amount));
+      if (this.countGoods === 0) $(this.container).hide();
     }
   }, {
     key: "_renderItem",
@@ -97,20 +143,45 @@ function () {
       var _this2 = this;
 
       var $container = $('<div/>', {
-        class: 'cart-item',
+        class: 'cart-item-box'
+      });
+      var $itemContainer = $('<div/>', {
+        class: 'cart-item-container'
+      });
+      var $itemLinkImg = $('<a/>', {
+        class: 'single-page-link',
+        href: 'single-page.html'
+      });
+      var $itemInfo = $('<div/>', {
+        class: 'cart-product-info',
         'data-product': product.id_product
       });
-      var $delButton = $('<button>', {
-        class: 'delBtn',
-        text: 'Удалить'
+      var $itemLinkName = $('<a/>', {
+        class: 'single-page-link',
+        href: 'single-page.html'
       });
+      var $delButton = $('<a>', {
+        class: 'cart-del-item',
+        href: "#del_".concat(product.id_product),
+        'data-product': product.id_product
+      });
+      $itemLinkImg.append($("<img class=\"cart-img\" src=\"".concat(product.min_img, "\" alt=\"product1\">")));
+      $itemLinkImg.appendTo($itemContainer);
+      $itemLinkName.append($("<h3>".concat(product.product_name, "</h3>")));
+      $itemLinkName.appendTo($itemInfo);
+      $itemInfo.append($("<i class=\"fas fa-star item-stars\"></i>"));
+      $itemInfo.append($("<i class=\"fas fa-star item-stars\"></i>"));
+      $itemInfo.append($("<i class=\"fas fa-star item-stars\"></i>"));
+      $itemInfo.append($("<i class=\"fas fa-star item-stars\"></i>"));
+      $itemInfo.append($("<i class=\"fas fa-star-half-alt item-stars\"></i>"));
+      $itemInfo.append($("<p> <span class=\"product-quantity\">".concat(product.quantity, "</span> x \n                            <span class=\"product-price\">$").concat(product.price, "</span></p>")));
+      $itemInfo.appendTo($itemContainer);
       $delButton.on('click', function (event) {
         return _this2._remove(event.target.parentNode);
       });
-      $container.append($("<p class=\"product-name\">".concat(product.product_name, "</p>")));
-      $container.append($("<p class=\"product-quantity\">".concat(product.quantity, "</p>")));
-      $container.append($("<p class=\"product-price\">".concat(product.price, " \u0440\u0443\u0431.</p>")));
-      $container.append($delButton);
+      $delButton.append($("<i class=\"fas fa-times-circle\"></i>"));
+      $delButton.appendTo($itemContainer);
+      $itemContainer.appendTo($container);
       $container.appendTo($('.cart-items-wrap'));
     }
   }, {
@@ -118,7 +189,7 @@ function () {
     value: function _updateCart(product) {
       var $container = $("div[data-product=\"".concat(product.id_product, "\"]"));
       $container.find('.product-quantity').text(product.quantity);
-      $container.find('.product-price').text("".concat(product.quantity * product.price, " \u0440\u0443\u0431"));
+      $container.find('.product-price').text("$".concat(product.price));
     }
   }, {
     key: "addProduct",
@@ -139,6 +210,7 @@ function () {
           id_product: productId,
           price: +$(element).data('price'),
           product_name: $(element).data('title'),
+          min_img: $(element).data('img'),
           quantity: 1
         };
         this.cartItems.push(product);
@@ -146,7 +218,13 @@ function () {
         this.amount += product.price;
 
         this._renderItem(product);
+
+        $(this.container).show();
       }
+
+      localStorage.setItem('mycart', JSON.stringify(this.cartItems));
+      localStorage.setItem('countGoods', this.countGoods);
+      localStorage.setItem('amount', this.amount);
 
       this._renderSum();
     }
@@ -164,15 +242,21 @@ function () {
         this.amount -= find.price;
 
         if (find.quantity === 0) {
-          element.remove();
+          element.parentNode.parentNode.remove();
           var findIndex = this.cartItems.findIndex(function (product) {
             return product.id_product === productId;
           });
           this.cartItems.splice(findIndex, 1);
-        } else this._updateCart(find);
+        }
+
+        if (this.countGoods === 0) $(this.container).hide();else this._updateCart(find);
       } else {
         console.log('error');
       }
+
+      localStorage.setItem('mycart', JSON.stringify(this.cartItems));
+      localStorage.setItem('countGoods', this.countGoods);
+      localStorage.setItem('amount', this.amount);
 
       this._renderSum();
     }

@@ -19,10 +19,6 @@ let gulp = require('gulp'), //Сам gulp
 // gulp.series() - последовательный запуск задач
 // gulp.watch() - следить за файлами
 
-gulp.task('test', () => {
-    return console.log('Gulp works');
-});
-
 gulp.task('html', () => {
     return gulp.src('app/html/**/*.html') // Выбор файла
         .pipe(htmlMin({collapseWhitespace: true})) //Сжатие файла
@@ -44,6 +40,11 @@ gulp.task('sass', () => {
 gulp.task('img', () => {
   return gulp.src('app/img/**/*.+(png|jpg|gif|svg)')
     .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('img_css', () => {
+return gulp.src('app/sass/img/**/*.+(png|jpg|gif|svg)')
+  .pipe(gulp.dest('dist/css/img'));
 });
 
 gulp.task('js:es6', () => {
@@ -70,7 +71,12 @@ gulp.task('server', () => {
        }
    })
 });
-
+gulp.task('html:watch', () => {
+  return gulp.watch('app/html/**/*.html', gulp.series('html', (done) => {
+    bs.reload();
+    done();
+  }))
+});
 gulp.task('sass:watch', () => {
    return gulp.watch('app/sass/**/*.scss', gulp.series('sass', (done) => {
        bs.reload();
@@ -92,10 +98,12 @@ gulp.task(
       'html',
       'sass',
       'img',
+      'img_css',
       'js:es6',
       'babel'
     ),
     gulp.parallel(
+      'html:watch',
       'sass:watch',
       'js:watch',
       'server'

@@ -16,6 +16,7 @@ $(document).ready(() => {
               data[i].id_product,
               data[i].product_name,
               data[i].price,
+              '.items-list'
               /*product.img,
               product.min_img*/
             )
