@@ -10,8 +10,8 @@ var Product =
 /*#__PURE__*/
 function () {
   function Product(id, title, price) {
-    var img = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'https://placehold.it/263x284';
-    var container = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '#products';
+    var container = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '#products';
+    var img = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 'https://placehold.it/263x284';
     var product_img = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 'https://placehold.it/72x85';
 
     _classCallCheck(this, Product);
@@ -19,8 +19,8 @@ function () {
     this.id = id;
     this.title = title;
     this.price = price;
-    this.img = img;
     this.container = container;
+    this.img = img;
     this.product_img = product_img;
 
     this._render();

@@ -25,7 +25,7 @@ $(document).ready(() => {
       cart: 'getCart.json',
     },
   };
-
+  // Товары
   const products = [];
   const pageName = window.location.pathname.split("/").pop().split(".").shift();
   const productCountOnPage = settings.productsCountOnPage[pageName];
@@ -33,7 +33,7 @@ $(document).ready(() => {
   const cartContainerOnPge = settings.cartContainers[pageName];
 
   // Корзина
-  let cart = new Cart(settings.sources.cart, cartContainerOnPge, pageName === "shopping-cart");
+  let cart = new Cart(settings.sources.cart,cartContainerOnPge,pageName === "shopping-cart");
 
   if (productCountOnPage !== 0) {
     fetch(settings.sources.items)
@@ -58,5 +58,4 @@ $(document).ready(() => {
         });
       });
   }
-
 });

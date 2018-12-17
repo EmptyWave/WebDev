@@ -21,7 +21,6 @@ class Cart {
     let $buttonsBox = $('<div/>', {
       class: 'cart-buttons-box'
     });
-    $(this.container).text('Корзина');
     $cartItemsDiv.appendTo($(this.container));
     //$totalProducts.appendTo($(this.container));
     $totalPrice.append($(`<p>TOTAL</p>`));
@@ -64,7 +63,7 @@ class Cart {
   _renderSum() {
     //$('.sum-amount').text(`Всего товаров в корзине: ${this.countGoods}`);
     $('.sum-price').text(`$${this.amount}`);
-    if (this.countGoods === 0) $(this.container).hide();
+    //if (this.countGoods === 0) $(this.container).hide();
   }
 
   _renderItem(product) {
@@ -158,7 +157,7 @@ class Cart {
         let findIndex = this.cartItems.findIndex(product => product.id_product === productId);
         this.cartItems.splice(findIndex,1);
       }
-      if (this.countGoods === 0) $(this.container).hide();
+      //if (this.countGoods === 0) $(this.container).hide();
       else this._updateCart(find);
     } else {
       console.log('error');
