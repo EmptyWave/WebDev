@@ -11,11 +11,13 @@ var Cart =
 function () {
   function Cart(source) {
     var container = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '#cart';
+    var isBigCart = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
     _classCallCheck(this, Cart);
 
     this.source = source;
     this.container = container;
+    this.isBigCart = isBigCart;
     this.countGoods = 0; // Общее кол-во товаров в корзине
 
     this.amount = 0; // Общее стоимость товаров в корзине
@@ -31,19 +33,13 @@ function () {
       var $cartItemsDiv = $('<div/>', {
         class: 'cart-items-wrap'
       });
-      /*let $totalProducts = $('<div/>', {
-        class: 'cart-summary sum-amount'
-      });*/
-
       var $totalPrice = $('<div/>', {
         class: 'cart-price'
       });
       var $buttonsBox = $('<div/>', {
         class: 'cart-buttons-box'
       });
-      $(this.container).text('Корзина');
-      $cartItemsDiv.appendTo($(this.container)); //$totalProducts.appendTo($(this.container));
-
+      $cartItemsDiv.appendTo($(this.container));
       $totalPrice.append($("<p>TOTAL</p>"));
       $totalPrice.append($("<p class=\"sum-price\"></p>"));
       $totalPrice.appendTo($(this.container));
@@ -52,11 +48,37 @@ function () {
       $buttonsBox.appendTo($(this.container));
     }
   }, {
-    key: "_init",
-    value: function _init(source) {
+    key: "_renderBig",
+    value: function _renderBig() {
       var _this = this;
 
-      this._render();
+      var $cartColumnsDiv = $('.cart-columns');
+      var $cartColumnDetail = $('<div/>', {
+        class: 'cart-columns__details'
+      });
+      var $delBtn = $('<a/>', {
+        class: 'cart-button cart-buttons__button delAllBtn',
+        href: '#'
+      });
+      $delBtn.text('cLEAR SHOPPING CART');
+      $delBtn.on('click', function () {
+        return _this._removeAll();
+      });
+      $('.cart-buttons').prepend($delBtn);
+      $cartColumnDetail.append($("<h3 class=\"cart-columns__details__h\">Product Detailsh</h3>"));
+      $cartColumnsDiv.append($cartColumnDetail);
+      $cartColumnsDiv.append($("<h3 class=\"cart-columns__h\">unite Price</h3>"));
+      $cartColumnsDiv.append($("<h3 class=\"cart-columns__h\">Quantity\t</h3>"));
+      $cartColumnsDiv.append($("<h3 class=\"cart-columns__h\">shipping\t</h3>"));
+      $cartColumnsDiv.append($("<h3 class=\"cart-columns__h\">Subtotal</h3>"));
+      $cartColumnsDiv.append($("<h3 class=\"cart-columns__h\">ACTION</h3>"));
+    }
+  }, {
+    key: "_init",
+    value: function _init(source) {
+      var _this2 = this;
+
+      this.isBigCart ? this._renderBig() : this._render();
 
       if (!localStorage.getItem('mycart')) {
         fetch(source).then(function (result) {
@@ -70,9 +92,9 @@ function () {
             for (var _iterator = data.contents[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
               var product = _step.value;
 
-              _this.cartItems.push(product);
+              _this2.cartItems.push(product);
 
-              _this._renderItem(product);
+              _this2.isBigCart ? _this2._renderBigItem(product) : _this2._renderItem(product);
             }
           } catch (err) {
             _didIteratorError = true;
@@ -89,13 +111,13 @@ function () {
             }
           }
 
-          _this.countGoods = data.countGoods;
-          _this.amount = data.amount;
-          localStorage.setItem('mycart', JSON.stringify(_this.cartItems));
-          localStorage.setItem('countGoods', _this.countGoods);
-          localStorage.setItem('amount', _this.amount);
+          _this2.countGoods = data.countGoods;
+          _this2.amount = data.amount;
+          localStorage.setItem('mycart', JSON.stringify(_this2.cartItems));
+          localStorage.setItem('countGoods', _this2.countGoods);
+          localStorage.setItem('amount', _this2.amount);
 
-          _this._renderSum();
+          _this2._renderSum();
         });
       } else {
         this.cartItems = JSON.parse(localStorage.getItem('mycart'));
@@ -106,8 +128,7 @@ function () {
         try {
           for (var _iterator2 = this.cartItems[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
             var product = _step2.value;
-
-            this._renderItem(product);
+            this.isBigCart ? this._renderBigItem(product) : this._renderItem(product);
           }
         } catch (err) {
           _didIteratorError2 = true;
@@ -135,12 +156,17 @@ function () {
     value: function _renderSum() {
       //$('.sum-amount').text(`Всего товаров в корзине: ${this.countGoods}`);
       $('.sum-price').text("$".concat(this.amount));
-      if (this.countGoods === 0) $(this.container).hide();
+
+      if (this.countGoods === 0) {
+        $(this.container).prepend($("<p class=\"emptyCart\"> Your cart is empty.</p>"));
+        this.isBigCart ? $('.delAllBtn').hide() : $('.cart-buttons-box').hide();
+        this.isBigCart ? $('.cart-buttons-box').hide() : $('.cart-price').hide();
+      }
     }
   }, {
     key: "_renderItem",
     value: function _renderItem(product) {
-      var _this2 = this;
+      var _this3 = this;
 
       var $container = $('<div/>', {
         class: 'cart-item-box'
@@ -154,7 +180,7 @@ function () {
       });
       var $itemInfo = $('<div/>', {
         class: 'cart-product-info',
-        'data-product': product.id_product
+        'data-id': product.id_product
       });
       var $itemLinkName = $('<a/>', {
         class: 'single-page-link',
@@ -163,7 +189,7 @@ function () {
       var $delButton = $('<a>', {
         class: 'cart-del-item',
         href: "#del_".concat(product.id_product),
-        'data-product': product.id_product
+        'data-id': product.id_product
       });
       $itemLinkImg.append($("<img class=\"cart-img\" src=\"".concat(product.min_img, "\" alt=\"product1\">")));
       $itemLinkImg.appendTo($itemContainer);
@@ -177,7 +203,7 @@ function () {
       $itemInfo.append($("<p> <span class=\"product-quantity\">".concat(product.quantity, "</span> x \n                            <span class=\"product-price\">$").concat(product.price, "</span></p>")));
       $itemInfo.appendTo($itemContainer);
       $delButton.on('click', function (event) {
-        return _this2._remove(event.target.parentNode);
+        return _this3._remove(event.target.parentNode);
       });
       $delButton.append($("<i class=\"fas fa-times-circle\"></i>"));
       $delButton.appendTo($itemContainer);
@@ -185,11 +211,76 @@ function () {
       $container.appendTo($('.cart-items-wrap'));
     }
   }, {
+    key: "_renderBigItem",
+    value: function _renderBigItem(product) {
+      var _this4 = this;
+
+      var $container = $('<div/>', {
+        class: 'cart-product-details',
+        "data-id": "".concat(product.id_product)
+      });
+      var $link = $('<a/>', {
+        href: 'single-page.html'
+      });
+      var $details = $('<div/>', {
+        class: 'cart-product-details__text-box'
+      });
+      var $form = $('<form/>', {
+        class: 'cart-product-other__p'
+      });
+      var $input = $('<input/>', {
+        class: "cart-product-other__input product-quantity",
+        type: "number",
+        "data-id": "".concat(product.id_product),
+        min: 0,
+        max: 99,
+        onkeydown: 'return false',
+        value: "".concat(product.quantity)
+      });
+      var $delBtnContainer = $('<div/>', {
+        class: 'cart-product-other__p'
+      });
+      var $delBtn = $('<a/>', {
+        href: "#del_".concat(product.id_product),
+        "data-id": "".concat(product.id_product),
+        class: 'cart-product-other__del'
+      });
+      $link.append($("<img src=\"".concat(product.min_img, "\" class=\"cart-product-details__img\" alt=\"shopping_cart_img\">")));
+      $details.append($("<a href=\"single-page.html\" \n                          class=\"cart-product-details__link\">\n                          <h3 class=\"cart-product-details__h\">".concat(product.product_name, "</h3>\n                        </a>")));
+      $details.append($("<p class=\"cart-product-details__p\">Color:\n                        <span class=\"cart-product-details__span\"> Red</span></p>"));
+      $details.append($("<p class=\"cart-product-details__p\">Size:\n                        <span class=\"cart-product-details__span\"> Xll</span></p>"));
+      $input.on('input', function (event) {
+        var productId = +$(event.target).data('id');
+
+        var find = _this4.cartItems.find(function (product) {
+          return product.id_product === productId;
+        });
+
+        event.target.value > find.quantity && _this4.addProduct(event.target);
+        event.target.value < find.quantity && _this4._remove(event.target);
+      });
+      $form.append($input);
+      $delBtn.on('click', function (event) {
+        return _this4._remove(event.target.parentNode);
+      });
+      $delBtn.append($("<i class=\"fas fa-times-circle\"></i>"));
+      $delBtnContainer.append($delBtn);
+      $container.append($link);
+      $container.append($details);
+      $container.append($("<p class=\"cart-product-other__p product-price\">$".concat(product.price, "</p>")));
+      $container.append($form);
+      $container.append($("<p class=\"cart-product-other__p\">FREE</p>"));
+      $container.append($("<p class=\"cart-product-other__p product-sum\">$".concat(product.quantity * product.price, "</p>")));
+      $container.append($delBtnContainer);
+      $container.appendTo($(this.container));
+    }
+  }, {
     key: "_updateCart",
     value: function _updateCart(product) {
-      var $container = $("div[data-product=\"".concat(product.id_product, "\"]"));
-      $container.find('.product-quantity').text(product.quantity);
+      var $container = $("div[data-id=\"".concat(product.id_product, "\"]"));
       $container.find('.product-price').text("$".concat(product.price));
+      this.isBigCart && $container.find('.product-sum').text("$".concat(product.price * product.quantity));
+      this.isBigCart ? $container.find('.product-quantity').val(product.quantity) : $container.find('.product-quantity').text(product.quantity);
     }
   }, {
     key: "addProduct",
@@ -213,13 +304,17 @@ function () {
           min_img: $(element).data('img'),
           quantity: 1
         };
+
+        if (this.countGoods === 0) {
+          $(".emptyCart").remove();
+          $('.cart-buttons-box').show();
+          $('.cart-price').show();
+        }
+
         this.cartItems.push(product);
         this.countGoods++;
         this.amount += product.price;
-
-        this._renderItem(product);
-
-        $(this.container).show();
+        this.isBigCart ? this._renderBigItem(product) : this._renderItem(product);
       }
 
       localStorage.setItem('mycart', JSON.stringify(this.cartItems));
@@ -231,7 +326,7 @@ function () {
   }, {
     key: "_remove",
     value: function _remove(element) {
-      var productId = $(element).data('product');
+      var productId = $(element).data('id');
       var find = this.cartItems.find(function (product) {
         return product.id_product === productId;
       });
@@ -247,9 +342,7 @@ function () {
             return product.id_product === productId;
           });
           this.cartItems.splice(findIndex, 1);
-        }
-
-        if (this.countGoods === 0) $(this.container).hide();else this._updateCart(find);
+        } else this._updateCart(find);
       } else {
         console.log('error');
       }
@@ -257,6 +350,19 @@ function () {
       localStorage.setItem('mycart', JSON.stringify(this.cartItems));
       localStorage.setItem('countGoods', this.countGoods);
       localStorage.setItem('amount', this.amount);
+
+      this._renderSum();
+    }
+  }, {
+    key: "_removeAll",
+    value: function _removeAll() {
+      $(this.container).html("");
+      this.countGoods = 0;
+      this.amount = 0;
+      this.cartItems = [];
+      localStorage.removeItem('mycart');
+      localStorage.removeItem('countGoods');
+      localStorage.removeItem('amount');
 
       this._renderSum();
     }

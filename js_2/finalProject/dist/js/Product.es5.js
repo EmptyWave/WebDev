@@ -13,6 +13,7 @@ function () {
     var container = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '#products';
     var img = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 'https://placehold.it/263x284';
     var product_img = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 'https://placehold.it/72x85';
+    var isSingleProduct = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : false;
 
     _classCallCheck(this, Product);
 
@@ -21,12 +22,18 @@ function () {
     this.price = price;
     this.container = container;
     this.img = img;
-    this.product_img = product_img;
+    this.min_img = product_img;
+    this.isSingleProduct = isSingleProduct;
 
-    this._render();
+    this._init();
   }
 
   _createClass(Product, [{
+    key: "_init",
+    value: function _init() {
+      this.isSingleProduct ? this._renderSingle() : this._render();
+    }
+  }, {
     key: "_render",
     value: function _render() {
       var $wrapper = $('<div/>', {
@@ -45,7 +52,7 @@ function () {
         'data-id': this.id,
         'data-price': this.price,
         'data-title': this.title,
-        'data-img': this.product_img
+        'data-img': this.min_img
       });
       var $name = $('<p/>', {
         class: 'item-name',
@@ -55,12 +62,19 @@ function () {
 
       $img.appendTo($imgBox);
       $imgBox.append($("<a href=\"single-page.html\" class=\"product__hide-box\"></a>"));
+      $imgBox.on('click', localStorage.setItem('singleProduct', JSON.stringify(this)));
       $buyBtn.html("<i class=\"fas fa-shopping-cart\"></i> Add to Cart");
       $buyBtn.appendTo($imgBox);
       $imgBox.appendTo($wrapper);
       $name.appendTo($wrapper);
       $price.appendTo($wrapper);
       $(this.container).append($wrapper);
+    }
+  }, {
+    key: "_renderSingle",
+    value: function _renderSingle() {
+      $('.price').text("$".concat(this.price));
+      $('.product-menu-container-h3').text("".concat(this.title));
     }
   }]);
 

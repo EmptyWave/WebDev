@@ -1647,7 +1647,8 @@ body {
   position: relative;
   display: flex;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  justify-content: center; }
   .single-product-slider__slide {
     text-align: center;
     position: absolute;
