@@ -2,7 +2,7 @@
 
 abstract class Good{
   private $name;
-  private $count;
+  //private $count;
   private $price;
   private $brand;
   private $lifeTime;
@@ -10,7 +10,7 @@ abstract class Good{
 
   function __construct($name,$count,$price,$brand,$lifeTime){
     $this->setName($name);
-    $this->setCount($count);
+ //   $this->setCount($count);
     $this->setPrise($price);
     $this->setBrand($brand);
     $this->setLifeTime($lifeTime);
@@ -19,9 +19,9 @@ abstract class Good{
   function setName($name){
     $this->name = $name;
   }
-  function setCount($count){
+/*  function setCount($count){
     $this->count = $count;
-  }
+  }*/
   function setPrise($price){
     $this->price = $price;
   }
@@ -32,15 +32,15 @@ abstract class Good{
     $this->lifeTime = $lifeTime;
   }
   function setSalesNum($alesNum){
-    $this->alesNum = $alesNum;
+    $this->salesNum = $alesNum;
   }
 
   function getName(){
     return $this->name;
   }
-  function getCount(){
+  /*function getCount(){
     return $this->count;
-  }
+  }*/
   function getPrice(){
     return $this->price;
   }
@@ -53,15 +53,15 @@ abstract class Good{
 
   function getGood(){
     $good['name'] = $this->name ;
-    $good['count'] = $this->count ;
+//    $good['count'] = $this->count ;
     $good['price'] = $this->price ;
     $good['brand'] = $this->brand ;
     $good['lifeTime'] = $this->lifeTime ;
     return $good;
   }
 
-  function incSalesNum(){
-    inc($this->salesNum);
+  function incSalesNum($inc = 1){
+    $this->salesNum += $inc;
   }
   function CountUpSalesRevenue(){
     return $this->salesNum*$this->price;
